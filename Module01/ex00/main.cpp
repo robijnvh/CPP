@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/07/28 10:40:29 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/07/28 12:56:58 by robijnvanho   ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/28 10:40:29 by robijnvanho       #+#    #+#             */
+/*   Updated: 2020/07/28 13:23:15 by rvan-hou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 
 void ponyOnTheHeap(void)
 {
-	Pony* pony1 = new Pony();
-    
-	pony1->name = "Joe";
-	pony1->color = "brown";
-    pony1->age = 2;
+	Pony *pony1 = new Pony("Joe", "brown", "2");
+    std::cout << "Hi! My name is " << pony1->giveName() << ".\n";
+	std::cout << "I'm the " << pony1->giveColor() << " pony on the heap.\n";
+	std::cout << "I'm " << pony1->giveAge() << " years old.\n";
 	delete pony1;
 }
 
 void ponyOnTheStack(void)
 {
-	Pony pony2;
-
-	pony2.name = "Hey";
-	pony2.color = "white";
-    pony2.age = 1;
+	Pony pony2("Jess", "white", "7");
+    std::cout << "Hi! My name is " << pony2.giveName() << ".\n";
+	std::cout << "I'm the " << pony2.giveColor() << " pony on the stack.\n";
+	std::cout << "I'm " << pony2.giveAge() << " years old.\n";
 	return;
 }
 
@@ -42,17 +40,3 @@ int main(void)
 	ponyOnTheStack();
     return (0);
 }
-
-// int     main(void)
-// {
-//     // create object on stack
-//     Pony pony1;
-//     pony1.color = 'brown';
-//     pony1.name = 'joe';
-
-//     // create object on heap
-//     Pony *pony2 = new Pony();
-//     pony2->color = 'white';
-//     pony2->name = 'yo';
-//     return (0);
-// }
