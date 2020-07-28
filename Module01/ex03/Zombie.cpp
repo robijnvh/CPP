@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Zombie.hpp                                         :+:    :+:            */
+/*   Zombie.cpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/28 16:16:31 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/07/28 19:14:40 by robijnvanho   ########   odam.nl         */
+/*   Created: 2020/07/28 18:26:03 by robijnvanho   #+#    #+#                 */
+/*   Updated: 2020/07/28 19:29:49 by robijnvanho   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ZOMBIE_HPP_
-# define _ZOMBIE_HPP_
+#include "Zombie.hpp"
 
-# include <iostream>
+Zombie::Zombie(void) { return ;}
 
-class Zombie {
-    std::string _type;
-    std::string _name;
-    
-    public:
-        Zombie(std::string, std::string);
-        ~Zombie(void);
-        void announce(void); 
-};
+Zombie::~Zombie(void) { return ;}
 
-#endif
+void Zombie::announce(void)
+{
+    std::string zombie_format;
+    std::string message;
+
+    zombie_format =  "< " + this->name + " (" + this->type + ")> ";
+    message = "Braaaaiiinnnsss...";
+    std::cout << zombie_format + message << std::endl;
+    return ;
+}

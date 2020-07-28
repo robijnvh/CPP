@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Zombie.hpp                                         :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/28 16:16:31 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/07/28 19:14:40 by robijnvanho   ########   odam.nl         */
+/*   Created: 2020/07/28 18:33:22 by robijnvanho   #+#    #+#                 */
+/*   Updated: 2020/07/28 19:35:13 by robijnvanho   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ZOMBIE_HPP_
-# define _ZOMBIE_HPP_
+#include "Zombie.hpp"
+#include "ZombieHorde.hpp"
 
-# include <iostream>
-
-class Zombie {
-    std::string _type;
-    std::string _name;
-    
-    public:
-        Zombie(std::string, std::string);
-        ~Zombie(void);
-        void announce(void); 
-};
-
-#endif
+int     main(void)
+{
+    int n = 5;
+    ZombieHorde *team = new ZombieHorde(n);
+    team->announce();
+    // for (int i = 0; i < n; i++)
+    // {
+    //     delete team->_zombie[i];
+    // }
+    delete team;
+    while (1);
+    return (0);
+}

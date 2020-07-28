@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Zombie.hpp                                         :+:    :+:            */
+/*   ZombieHorde.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/28 16:16:31 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/07/28 19:14:40 by robijnvanho   ########   odam.nl         */
+/*   Created: 2020/07/28 18:26:08 by robijnvanho   #+#    #+#                 */
+/*   Updated: 2020/07/28 19:38:05 by robijnvanho   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ZOMBIE_HPP_
-# define _ZOMBIE_HPP_
+#ifndef _ZOMBIEHORDE_HPP_
+# define _ZOMBIEHORDE_HPP_
 
 # include <iostream>
+# include "Zombie.hpp"
 
-class Zombie {
-    std::string _type;
-    std::string _name;
+class ZombieHorde {
+    int     n;
+    Zombie  *_zombie;
     
     public:
-        Zombie(std::string, std::string);
-        ~Zombie(void);
-        void announce(void); 
+        ZombieHorde(int);
+        ~ZombieHorde(void);
+        void announce(void);
+        // void delall(void);
 };
 
 #endif

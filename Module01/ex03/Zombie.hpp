@@ -6,7 +6,7 @@
 /*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 16:16:31 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/07/28 19:14:40 by robijnvanho   ########   odam.nl         */
+/*   Updated: 2020/07/28 19:14:02 by robijnvanho   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@
 # include <iostream>
 
 class Zombie {
-    std::string _type;
-    std::string _name;
     
     public:
-        Zombie(std::string, std::string);
+        Zombie(void);
         ~Zombie(void);
+        
+        std::string type;
+        std::string name;
         void announce(void); 
 };
 
