@@ -1,25 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ZombieHorde.cpp                                    :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/07/28 18:26:06 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/07/28 19:38:03 by robijnvanho   ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/28 18:26:06 by robijnvanho       #+#    #+#             */
+/*   Updated: 2020/07/29 10:22:10 by rvan-hou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieHorde.hpp"
-
-// void ZombieHorde::delall(void)
-// {
-//     for (int i = 0; i < this->n; i++)
-//     {
-//         delete this->_zombie[i];
-//     }
-//     return ;
-// }
 
 void ZombieHorde::announce(void)
 {

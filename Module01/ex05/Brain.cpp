@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   Brain.cpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/28 18:33:22 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/07/29 10:24:06 by rvan-hou      ########   odam.nl         */
+/*   Created: 2020/07/29 10:39:09 by rvan-hou      #+#    #+#                 */
+/*   Updated: 2020/07/29 11:18:50 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include "ZombieHorde.hpp"
+#include "Brain.hpp"
 
-int     main(void)
+Brain::Brain(void) {
+	std::stringstream ss;
+
+	ss << (void *)this;
+	this->addr = ss.str();
+};
+
+Brain::~Brain(void) {};
+
+std::string	Brain::identify(void)
 {
-    int n = 5;
-    ZombieHorde *team = new ZombieHorde(n);
-    team->announce();
-    return (0);
+	return (this->addr);
 }

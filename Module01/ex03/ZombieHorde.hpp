@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ZombieHorde.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 18:26:08 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/07/28 19:38:05 by robijnvanho   ########   odam.nl         */
+/*   Updated: 2020/07/29 10:24:14 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class ZombieHorde {
         ZombieHorde(int);
         ~ZombieHorde(void);
         void announce(void);
-        // void delall(void);
 };
 
 #endif
