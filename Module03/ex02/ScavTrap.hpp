@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ScavTrap.hpp                                       :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/08/01 17:38:23 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/08/01 18:11:07 by robijnvanho   ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/01 17:38:23 by robijnvanho       #+#    #+#             */
+/*   Updated: 2020/08/03 12:32:27 by rvan-hou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,10 @@
 # define _SCAVTRAP_HPP_
 # include <iostream>
 # include <string>
+# include "ClapTrap.hpp"
 
-class ScavTrap
+class ScavTrap : public ClapTrap
 {
-    unsigned int         hit_points;
-    unsigned int         max_hit_points;
-    unsigned int         energy_points;
-    unsigned int         max_energy_points;
-    unsigned int         level;
-    std::string          _name;
-    unsigned int         melee_att_damage;
-    unsigned int         ranged_att_damage;
-    unsigned int         armour_damage_red;
     std::string          challenge;
     
     public:
@@ -35,16 +27,6 @@ class ScavTrap
         ~ScavTrap();
         //operator
         ScavTrap  &operator=(ScavTrap const &obj);
-        //methods
-        void    rangedAttack(std::string const & target);
-        void    meleeAttack(std::string const & target);
-        void    takeDamage(unsigned int amount);
-        void    beRepaired(unsigned int amount);
-        //get methods
-        std::string     getName(void);
-        unsigned int    getMeleeAttackDamage(void);
-        unsigned int    getRangedAttackDamage(void);
-        unsigned int    getArmourDamageReduction(void);
         //challenge
         void            challengeNewcomer(std::string const & target);
         std::string     getChallenge(void);

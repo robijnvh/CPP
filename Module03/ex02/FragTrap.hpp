@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   FragTrap.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 11:28:51 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/08/01 17:07:34 by robijnvanho   ########   odam.nl         */
+/*   Updated: 2020/08/03 12:31:44 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,10 @@
 # define _FRAGTRAP_HPP_
 # include <iostream>
 # include <string>
+# include "ClapTrap.hpp"
 
-class FragTrap
+class FragTrap : public ClapTrap
 {
-    unsigned int         hit_points;
-    unsigned int         max_hit_points;
-    unsigned int         energy_points;
-    unsigned int         max_energy_points;
-    unsigned int         level;
-    std::string          _name;
-    unsigned int         melee_att_damage;
-    unsigned int         ranged_att_damage;
-    unsigned int         armour_damage_red;
     unsigned int         red_att_damage;
     unsigned int         green_att_damage;
     unsigned int         blue_att_damage;
@@ -38,17 +30,9 @@ class FragTrap
         ~FragTrap();
         //operator
         FragTrap  &operator=(FragTrap const &obj);
-        //methods
-        void    rangedAttack(std::string const & target);
-        void    meleeAttack(std::string const & target);
-        void    takeDamage(unsigned int amount);
-        void    beRepaired(unsigned int amount);
-        //get methods
-        std::string getName(void);
-        unsigned int    getMeleeAttackDamage(void);
-        unsigned int    getRangedAttackDamage(void);
-        unsigned int    getArmourDamageReduction(void);
         //random attack method
+		void    		rangedAttack(std::string const & target);
+        void    		meleeAttack(std::string const & target);
         unsigned int    getVaultHunter_dot_exeDamage(void);
         void            vaulthunter_dot_exe(std::string const & target);
         void            redAttack(std::string const & target);
