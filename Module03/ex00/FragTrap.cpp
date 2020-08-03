@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   FragTrap.cpp                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 11:30:13 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/08/01 17:18:13 by robijnvanho   ########   odam.nl         */
+/*   Updated: 2020/08/03 14:46:05 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ void    FragTrap::takeDamage(unsigned int amount)
     else
     {
         this->hit_points -= damage;
-        std::cout << this->_name << ">> I'm still here!" << std::endl;
+        std::cout << this->_name << " >> I'm still here!" << std::endl;
         std::cout << "Armour reduction: " << this->armour_damage_red << std::endl;
         std::cout << "Damage: " << damage << std::endl;
         std::cout << "Hit Points: " << this->hit_points << "|" \

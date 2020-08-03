@@ -6,10 +6,11 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 11:30:13 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/08/03 14:48:26 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/08/03 12:32:05 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(std::string name)
@@ -37,6 +38,7 @@ FragTrap::FragTrap()
 
 FragTrap::~FragTrap()
 {
+    std::cout << "FragTrap Destructor called" << std::endl;	
     std::cout << this->_name << " has left the game..." << std::endl;
 };
 
@@ -103,48 +105,6 @@ void    FragTrap::blueAttack(std::string const & target)
     
 };
 
-void    FragTrap::takeDamage(unsigned int amount)
-{
-    unsigned int    damage;
-
-    if (amount <= this->armour_damage_red)
-        damage = 0;
-    else
-        damage = amount - this->armour_damage_red;
-    if (damage > this->hit_points)
-    {
-        this->hit_points = 0;
-        std::cout << this->_name << ">> Game over..." << std::endl;
-    }
-    else
-    {
-        this->hit_points -= damage;
-        std::cout << this->_name << " >> I'm still here!" << std::endl;
-        std::cout << "Armour reduction: " << this->armour_damage_red << std::endl;
-        std::cout << "Damage: " << damage << std::endl;
-        std::cout << "Hit Points: " << this->hit_points << "|" \
-        << this->max_hit_points << std::endl;
-    }
-    return ;
-};
-
-void    FragTrap::beRepaired(unsigned int amount)
-{
-    if (this->energy_points < amount)
-    {
-        std::cout << this->_name << ">> Not enough energy..." << std::endl;
-    }
-    else
-    {
-        this->energy_points -= amount;
-        this->hit_points += amount;
-        std::cout << this->_name << ">> Busy repairing..." << std::endl;
-        std::cout << "Hit Points: " << this->hit_points << std::endl;
-    }
-    std::cout << "Energy Points: " << this->energy_points << std::endl;
-    return ;
-};
-
 void            FragTrap::vaulthunter_dot_exe(std::string const & target)
 {
     int   attack;
@@ -175,24 +135,4 @@ void            FragTrap::vaulthunter_dot_exe(std::string const & target)
 unsigned int    FragTrap::getVaultHunter_dot_exeDamage()
 {
     return (this->vaulthunter_damage);
-};
-
-std::string     FragTrap::getName()
-{
-    return (this->_name);
-};
-
-unsigned int    FragTrap::getMeleeAttackDamage()
-{
-    return (this->melee_att_damage);
-};
-
-unsigned int    FragTrap::getRangedAttackDamage()
-{
-    return (this->ranged_att_damage);
-};
-
-unsigned int    FragTrap::getArmourDamageReduction()
-{
-    return (this->armour_damage_red);
 };

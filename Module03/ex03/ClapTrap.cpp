@@ -1,45 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ScavTrap.cpp                                       :+:    :+:            */
+/*   ClapTrap.cpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/01 17:38:06 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/08/03 14:48:46 by rvan-hou      ########   odam.nl         */
+/*   Created: 2020/08/03 11:36:24 by rvan-hou      #+#    #+#                 */
+/*   Updated: 2020/08/03 12:31:31 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name)
+ClapTrap::ClapTrap(std::string name)
 {
-    std::cout << "Hi! I'm ScavTrap " << name << "!" << std::endl;
-    this->_name = name;
+    std::cout << "ClapTrap Constructor called" << std::endl;
+	this->_name = name;
     this->hit_points = 100;
     this->max_hit_points = 100;
-    this->energy_points = 50;
-    this->max_energy_points = 50;
+    this->energy_points = 100;
+    this->max_energy_points = 100;
     this->level = 1;
-    this->melee_att_damage = 20;
-    this->ranged_att_damage = 15;
-    this->armour_damage_red = 3;
+    this->melee_att_damage = 30;
+    this->ranged_att_damage = 20;
+    this->armour_damage_red = 5;
     return ;
 };
 
-ScavTrap::ScavTrap()
+ClapTrap::ClapTrap()
 { 
-    std::cout << "Creating ScavTrap..." << std::endl;
+    std::cout << "ClapTrap Constructor called (no arg)" << std::endl;
+	return ;
 };
 
-ScavTrap::~ScavTrap()
+ClapTrap::~ClapTrap()
 {
-    std::cout << this->_name << " has excited the game..." << std::endl;
+    std::cout << "ClapTrap Destructor called" << std::endl;
+    return ;
 };
 
-ScavTrap&   ScavTrap::operator=(ScavTrap const &obj)
+ClapTrap&   ClapTrap::operator=(ClapTrap const &obj)
 {
-    this->_name = obj._name;
+	this->_name = obj._name;
     this->hit_points = obj.hit_points;
     this->max_hit_points = obj.max_hit_points;
     this->energy_points = obj.energy_points;
@@ -48,26 +50,26 @@ ScavTrap&   ScavTrap::operator=(ScavTrap const &obj)
     this->melee_att_damage = obj.melee_att_damage;
     this->ranged_att_damage = obj.ranged_att_damage;
     this->armour_damage_red = obj.armour_damage_red;
-    return (*this);
+	return (*this);
 };
 
-void    ScavTrap::meleeAttack(std::string const &target)
+void    ClapTrap::meleeAttack(std::string const &target)
 {
-    std::cout << "SCAV-TP " << this->_name << " attacks " << target \
+    std::cout << "CLAP-TP " << this->_name << " attacks " << target \
               << " with melee, causing " << this->melee_att_damage \
-              << " points of EXTREME damage !" << std::endl;
+              << " points of damage !" << std::endl;
     return ;
 };
 
-void    ScavTrap::rangedAttack(std::string const & target)
+void    ClapTrap::rangedAttack(std::string const & target)
 {
-    std::cout   << "SCAV-TP " << this->_name << " attacks " << target \
+    std::cout   << "CLAP-TP " << this->_name << " attacks " << target \
                 << " at range, causing " << this->ranged_att_damage \
-                << " points of EXTREME damage !" << std::endl;
+                << " points of damage !" << std::endl;
     return ;
 };
 
-void    ScavTrap::takeDamage(unsigned int amount)
+void    ClapTrap::takeDamage(unsigned int amount)
 {
     unsigned int    damage;
 
@@ -83,7 +85,7 @@ void    ScavTrap::takeDamage(unsigned int amount)
     else
     {
         this->hit_points -= damage;
-        std::cout << this->_name << " >> That's all?! Try again!" << std::endl;
+        std::cout << this->_name << ">> That's all?! Try again!" << std::endl;
         std::cout << "Armour reduction: " << this->armour_damage_red << std::endl;
         std::cout << "Damage: " << damage << std::endl;
         std::cout << "Hit Points: " << this->hit_points << "|" \
@@ -92,63 +94,39 @@ void    ScavTrap::takeDamage(unsigned int amount)
     return ;
 };
 
-void    ScavTrap::beRepaired(unsigned int amount)
+void    ClapTrap::beRepaired(unsigned int amount)
 {
     if (this->energy_points < amount)
     {
-        std::cout << this->_name << " >> Not enough energy..." << std::endl;
+        std::cout << this->_name << ">> Not enough energy..." << std::endl;
     }
     else
     {
         this->energy_points -= amount;
         this->hit_points += amount;
-        std::cout << this->_name << " >> Busy repairing..." << std::endl;
+        std::cout << this->_name << ">> Busy repairing..." << std::endl;
         std::cout << "Hit Points: " << this->hit_points << std::endl;
     }
     std::cout << "Energy Points: " << this->energy_points << std::endl;
     return ;
 };
 
-void            ScavTrap::challengeNewcomer(std::string const & target)
-{
-	int index;
-    std::string challenge[] =
-    {
-        "Go for a nice relaxing walk",
-        "Go find another opponent, you'll never win",
-        "Give me 100+% during the eval",
-        "Just keep going",
-        "You're lucky, you're dismissed"
-    };
-    srand(time(NULL));
-    index = rand() % 5;
-	this->challenge = challenge[index];
-    std::cout << this->_name << ": Your challenge is: " << this->challenge \
-              << "! Have fun " << target << std::endl;
-    return ;
-}
-
-std::string     ScavTrap::getName()
+std::string     ClapTrap::getName()
 {
     return (this->_name);
 };
 
-unsigned int    ScavTrap::getMeleeAttackDamage()
+unsigned int    ClapTrap::getMeleeAttackDamage()
 {
     return (this->melee_att_damage);
 };
 
-unsigned int    ScavTrap::getRangedAttackDamage()
+unsigned int    ClapTrap::getRangedAttackDamage()
 {
     return (this->ranged_att_damage);
 };
 
-unsigned int    ScavTrap::getArmourDamageReduction()
+unsigned int    ClapTrap::getArmourDamageReduction()
 {
     return (this->armour_damage_red);
-};
-
-std::string     ScavTrap::getChallenge(void)
-{
-    return (this->challenge);
 };
