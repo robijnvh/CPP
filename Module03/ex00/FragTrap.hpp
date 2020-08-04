@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   FragTrap.hpp                                       :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/08/01 11:28:51 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/08/01 17:07:34 by robijnvanho   ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/01 11:28:51 by robijnvanho       #+#    #+#             */
+/*   Updated: 2020/08/04 12:06:33 by rvan-hou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class FragTrap
         //constructors//destructors
         FragTrap(std::string);
         FragTrap(void);
+		FragTrap(const FragTrap &cpy);
         ~FragTrap();
         //operator
         FragTrap  &operator=(FragTrap const &obj);
@@ -44,7 +45,10 @@ class FragTrap
         void    takeDamage(unsigned int amount);
         void    beRepaired(unsigned int amount);
         //get methods
-        std::string getName(void);
+        std::string 	getName(void);
+		// unsigned int	getHitPoints(void);
+		// unsigned int	getEnergyPoints(void);
+		// unsigned int	getLevel(void);
         unsigned int    getMeleeAttackDamage(void);
         unsigned int    getRangedAttackDamage(void);
         unsigned int    getArmourDamageReduction(void);

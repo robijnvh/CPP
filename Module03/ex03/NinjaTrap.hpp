@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 13:00:15 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/08/03 15:26:20 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/08/04 12:26:21 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,15 @@ class NinjaTrap : public ClapTrap {
 	public:
 		NinjaTrap();
 		NinjaTrap(std::string n);
+		NinjaTrap(const NinjaTrap& ninjaTrap);
 		~NinjaTrap();
         NinjaTrap 	&operator=(NinjaTrap const &obj);
-		// void		ninjaShoebox(ClapTrap const &obj);
+		void		meleeAttack(std::string const &target);
+		void		rangedAttack(std::string const & target);
 		void		ninjaShoebox(ScavTrap &obj);
 		void		ninjaShoebox(FragTrap &obj);
 		void		ninjaShoebox(NinjaTrap &obj);
+		void		ninjaShoebox(ClapTrap &obj);
 };
 
 #endif

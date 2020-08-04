@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 11:28:51 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/08/03 12:31:44 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/08/03 15:59:43 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <string>
 # include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : public virtual ClapTrap
 {
     unsigned int         red_att_damage;
     unsigned int         green_att_damage;

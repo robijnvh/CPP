@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   SuperTrap.hpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/03 15:33:43 by rvan-hou          #+#    #+#             */
-/*   Updated: 2020/08/03 15:46:21 by rvan-hou         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   SuperTrap.hpp                                      :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/08/03 15:33:43 by rvan-hou      #+#    #+#                 */
+/*   Updated: 2020/08/04 12:58:45 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,11 @@ class SuperTrap : public FragTrap, NinjaTrap {
 	public:
 		SuperTrap();
 		SuperTrap(std::string n);
-		~SuperTrap();
+		SuperTrap(const SuperTrap& superTrap);
+		virtual ~SuperTrap();
         SuperTrap 	&operator=(SuperTrap const &obj);
-		void    	rangedAttack(std::string const & target);
-		void    	meleeAttack(std::string const & target);
+		using		FragTrap::rangedAttack;
+		using		NinjaTrap::meleeAttack;
 };
 
 #endif

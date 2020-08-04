@@ -3,14 +3,18 @@
 /*                                                        ::::::::            */
 /*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 09:41:47 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/07/28 09:48:16 by robijnvanho   ########   odam.nl         */
+/*   Updated: 2020/08/03 16:07:42 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contact.class.hpp"
+
+Contact::Contact(){};
+
+Contact::~Contact(){};
 
 void    Contact::add_data(void)
 {

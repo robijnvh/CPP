@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ScavTrap.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 17:38:23 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/08/01 18:11:07 by robijnvanho   ########   odam.nl         */
+/*   Updated: 2020/08/04 12:10:20 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ class ScavTrap
         ScavTrap(std::string);
         ScavTrap(void);
         ~ScavTrap();
+		ScavTrap(const ScavTrap& scavTrap);
+
         //operator
         ScavTrap  &operator=(ScavTrap const &obj);
         //methods

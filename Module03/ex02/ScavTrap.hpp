@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/01 17:38:23 by robijnvanho       #+#    #+#             */
-/*   Updated: 2020/08/03 12:32:27 by rvan-hou         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ScavTrap.hpp                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/08/01 17:38:23 by robijnvanho   #+#    #+#                 */
+/*   Updated: 2020/08/04 12:17:44 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ class ScavTrap : public ClapTrap
         //challenge
         void            challengeNewcomer(std::string const & target);
         std::string     getChallenge(void);
+		void    		rangedAttack(std::string const & target);
+        void    		meleeAttack(std::string const & target);
 };
 
 #endif

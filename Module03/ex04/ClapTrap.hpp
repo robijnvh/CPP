@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/03 11:35:56 by rvan-hou          #+#    #+#             */
-/*   Updated: 2020/08/03 11:55:42 by rvan-hou         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ClapTrap.hpp                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/08/03 11:35:56 by rvan-hou      #+#    #+#                 */
+/*   Updated: 2020/08/04 14:32:25 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,10 @@ class ClapTrap {
 	public:
         ClapTrap(std::string);
         ClapTrap(void);
-        ~ClapTrap();
-        //operator
+		ClapTrap(const ClapTrap& clapTrap)
         ClapTrap  &operator=(ClapTrap const &obj);
+        ~ClapTrap();
 		//methods
-		void    rangedAttack(std::string const & target);
-        void    meleeAttack(std::string const & target);
         void    takeDamage(unsigned int amount);
         void    beRepaired(unsigned int amount);
 		std::string     getName(void);

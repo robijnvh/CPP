@@ -6,11 +6,29 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 11:30:13 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/08/03 14:46:05 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/08/04 12:05:53 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+
+FragTrap::FragTrap()
+{
+	std::cout << "FragTrap constucted. Jo-7." << std::endl;
+	this->_name = "Jo-7";
+    this->hit_points = 100;
+    this->max_hit_points = 100;
+    this->energy_points = 100;
+    this->max_energy_points = 100;
+    this->level = 1;
+    this->melee_att_damage = 30;
+    this->ranged_att_damage = 20;
+    this->armour_damage_red = 5;
+    this->red_att_damage = 42;
+    this->green_att_damage = 1;
+    this->blue_att_damage = 100;
+    this->vaulthunter_damage = 0;
+};
 
 FragTrap::FragTrap(std::string name)
 {
@@ -31,14 +49,15 @@ FragTrap::FragTrap(std::string name)
     return ;
 };
 
-FragTrap::FragTrap()
-{ 
-};
-
 FragTrap::~FragTrap()
 {
-    std::cout << this->_name << " has left the game..." << std::endl;
+	std::cout << this->_name << " has left the game..." << std::endl;
 };
+
+FragTrap::FragTrap(const FragTrap &cpy)
+{
+	*this = cpy;
+}
 
 FragTrap&   FragTrap::operator=(FragTrap const &obj)
 {
@@ -107,41 +126,41 @@ void    FragTrap::takeDamage(unsigned int amount)
 {
     unsigned int    damage;
 
-    if (amount <= this->armour_damage_red)
+    if (amount <= armour_damage_red)
         damage = 0;
     else
-        damage = amount - this->armour_damage_red;
-    if (damage > this->hit_points)
+        damage = amount - armour_damage_red;
+    if (damage > hit_points)
     {
-        this->hit_points = 0;
-        std::cout << this->_name << ">> Game over..." << std::endl;
+        hit_points = 0;
+        std::cout << _name << ">> Game over..." << std::endl;
     }
     else
     {
-        this->hit_points -= damage;
-        std::cout << this->_name << " >> I'm still here!" << std::endl;
-        std::cout << "Armour reduction: " << this->armour_damage_red << std::endl;
+        hit_points -= damage;
+        std::cout << _name << " >> I'm still here!" << std::endl;
+        std::cout << "Armour reduction: " << armour_damage_red << std::endl;
         std::cout << "Damage: " << damage << std::endl;
-        std::cout << "Hit Points: " << this->hit_points << "|" \
-        << this->max_hit_points << std::endl;
+        std::cout << "Hit Points: " << hit_points << "|" \
+        << max_hit_points << std::endl;
     }
     return ;
 };
 
 void    FragTrap::beRepaired(unsigned int amount)
 {
-    if (this->energy_points < amount)
+    if (energy_points < amount)
     {
-        std::cout << this->_name << ">> Not enough energy..." << std::endl;
+        std::cout << _name << ">> Not enough energy..." << std::endl;
     }
     else
     {
-        this->energy_points -= amount;
-        this->hit_points += amount;
-        std::cout << this->_name << ">> Busy repairing..." << std::endl;
-        std::cout << "Hit Points: " << this->hit_points << std::endl;
+        energy_points -= amount;
+        hit_points += amount;
+        std::cout << _name << ">> Busy repairing..." << std::endl;
+        std::cout << "Hit Points: " << hit_points << std::endl;
     }
-    std::cout << "Energy Points: " << this->energy_points << std::endl;
+    std::cout << "Energy Points: " << energy_points << std::endl;
     return ;
 };
 
@@ -181,6 +200,21 @@ std::string     FragTrap::getName()
 {
     return (this->_name);
 };
+
+// unsigned int	FragTrap::getHitPoints(void)
+// {
+// 	return (this->hit_points);
+// }
+
+// unsigned int	FragTrap::getEnergyPoints(void)
+// {
+// 	return (this->energy_points);
+// }
+
+// unsigned int	FragTrap::getLevel(void)
+// {
+// 	return (this->level);
+// }
 
 unsigned int    FragTrap::getMeleeAttackDamage()
 {

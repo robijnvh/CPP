@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 17:38:06 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/08/03 12:32:16 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/08/04 12:18:27 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,22 @@ ScavTrap&   ScavTrap::operator=(ScavTrap const &obj)
     this->ranged_att_damage = obj.ranged_att_damage;
     this->armour_damage_red = obj.armour_damage_red;
     return (*this);
+};
+
+void    ScavTrap::meleeAttack(std::string const &target)
+{
+    std::cout << "SCAVTRAP " << this->_name << " attacks " << target \
+              << " with melee, causing " << this->melee_att_damage \
+              << " points of damage !" << std::endl;
+    return ;
+};
+
+void    ScavTrap::rangedAttack(std::string const & target)
+{
+    std::cout   << "SCAVTRAP " << this->_name << " attacks " << target \
+                << " at range, causing " << this->ranged_att_damage \
+                << " points of damage !" << std::endl;
+    return ;
 };
 
 void            ScavTrap::challengeNewcomer(std::string const & target)

@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 13:00:47 by rvan-hou          #+#    #+#             */
-/*   Updated: 2020/08/03 15:27:42 by rvan-hou         ###   ########.fr       */
+/*   Updated: 2020/08/04 12:27:54 by rvan-hou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,21 @@ NinjaTrap::NinjaTrap(std::string name)
 
 NinjaTrap::NinjaTrap()
 { 
+	std::cout << "Hi! I'm Ninja C-4!" << std::endl;
+	this->_hitPoints = 60;
+	this->_maxHitPoints = 60;
+	this->_energyPoints = 120;
+	this->_maxEnergyPoints = 120;
+	this->_level = 1;
+	this->_name = "C-4";
+	this->_meleeAttackDamage = 60;
+	this->_rangedAttackDamage = 5;
+	this->_armourDamageReduction = 0;
+};
+
+NinjaTrap::NinjaTrap(const NinjaTrap& ninjaTrap): ClapTrap(ninjaTrap)
+{
+	
 };
 
 NinjaTrap::~NinjaTrap()
@@ -50,22 +65,42 @@ NinjaTrap&   NinjaTrap::operator=(NinjaTrap const &obj)
     return (*this);
 }
 
-// void		NinjaTrap::ninjaShoebox(ClapTrap const &obj)
-// {
-	
-// }
+void    NinjaTrap::meleeAttack(std::string const &target)
+{
+    std::cout << "NINJATRAP" << this->_name << " attacks " << target \
+              << " with melee, causing " << this->melee_att_damage \
+              << " points of damage !" << std::endl;
+    return ;
+};
+
+void    NinjaTrap::rangedAttack(std::string const & target)
+{
+    std::cout   << "NINJATRAP" << this->_name << " attacks " << target \
+                << " at range, causing " << this->ranged_att_damage \
+                << " points of damage !" << std::endl;
+    return ;
+};
+
+void		NinjaTrap::ninjaShoebox(ClapTrap &obj)
+{
+	std::cout << this->_name << " hits " << obj.getName() << " with shoebox" << std::endl;
+	obj.takeDamage(10);
+}
 
 void		NinjaTrap::ninjaShoebox(ScavTrap &obj)
 {
 	std::cout << this->_name << " throws Shoebox at " << obj.getName() << std::endl;
+	obj.takeDamage(10);
 }
 
 void		NinjaTrap::ninjaShoebox(FragTrap &obj)
 {
 	std::cout << this->_name << " bought new shoes for " << obj.getName() << std::endl;	
+	obj.takeDamage(10);
 }
 
 void		NinjaTrap::ninjaShoebox(NinjaTrap &obj)
 {
 	std::cout << this->_name << " sings about his new shoes for " << obj.getName() << std::endl;	
+	obj.takeDamage(10);
 }

@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 11:36:24 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/08/03 12:31:31 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/08/04 14:31:52 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,26 @@
 ClapTrap::ClapTrap(std::string name)
 {
     std::cout << "ClapTrap Constructor called" << std::endl;
-	this->_name = name;
-    this->hit_points = 100;
-    this->max_hit_points = 100;
-    this->energy_points = 100;
-    this->max_energy_points = 100;
-    this->level = 1;
-    this->melee_att_damage = 30;
-    this->ranged_att_damage = 20;
-    this->armour_damage_red = 5;
+	_name = name;
+	hit_points = 0;
+	energy_points = 0;
+	max_energy_points = 0;
+	armour_damage_red = 0;
     return ;
 };
 
-ClapTrap::ClapTrap()
-{ 
-    std::cout << "ClapTrap Constructor called (no arg)" << std::endl;
-	return ;
+ClapTrap::ClapTrap(){
+    std::cout << "ClapTrap Constructor called" << std::endl;
+	hit_points = 0;
+	energy_points = 0;
+	max_energy_points = 0;
+	armour_damage_red = 0;
 };
+
+ClapTrap::ClapTrap(const ClapTrap& clapTrap)
+{
+	*this = clapTrap;
+}
 
 ClapTrap::~ClapTrap()
 {

@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 11:36:24 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/08/03 12:31:31 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/08/04 12:18:50 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,36 @@ ClapTrap::ClapTrap(std::string name)
 {
     std::cout << "ClapTrap Constructor called" << std::endl;
 	this->_name = name;
-    this->hit_points = 100;
-    this->max_hit_points = 100;
-    this->energy_points = 100;
-    this->max_energy_points = 100;
-    this->level = 1;
-    this->melee_att_damage = 30;
-    this->ranged_att_damage = 20;
-    this->armour_damage_red = 5;
+    this->hit_points = 0;
+    this->max_hit_points = 0;
+    this->energy_points = 0;
+    this->max_energy_points = 0;
+    this->level = 0;
+    this->melee_att_damage = 0;
+    this->ranged_att_damage = 0;
+    this->armour_damage_red = 0;
     return ;
 };
 
 ClapTrap::ClapTrap()
 { 
-    std::cout << "ClapTrap Constructor called (no arg)" << std::endl;
+    std::cout << "ClapTrap Constructor called (no arg), claptrap-22" << std::endl;
+	this->_name = "claptrap-22";
+    this->hit_points = 0;
+    this->max_hit_points = 0;
+    this->energy_points = 0;
+    this->max_energy_points = 0;
+    this->level = 0;
+    this->melee_att_damage = 0;
+    this->ranged_att_damage = 0;
+    this->armour_damage_red = 0;
 	return ;
 };
+
+ClapTrap::ClapTrap(const ClapTrap& clapTrap)
+{
+	*this  = clapTrap;
+}
 
 ClapTrap::~ClapTrap()
 {
@@ -53,61 +67,45 @@ ClapTrap&   ClapTrap::operator=(ClapTrap const &obj)
 	return (*this);
 };
 
-void    ClapTrap::meleeAttack(std::string const &target)
-{
-    std::cout << "CLAP-TP " << this->_name << " attacks " << target \
-              << " with melee, causing " << this->melee_att_damage \
-              << " points of damage !" << std::endl;
-    return ;
-};
-
-void    ClapTrap::rangedAttack(std::string const & target)
-{
-    std::cout   << "CLAP-TP " << this->_name << " attacks " << target \
-                << " at range, causing " << this->ranged_att_damage \
-                << " points of damage !" << std::endl;
-    return ;
-};
-
 void    ClapTrap::takeDamage(unsigned int amount)
 {
     unsigned int    damage;
 
-    if (amount <= this->armour_damage_red)
+    if (amount <= armour_damage_red)
         damage = 0;
     else
-        damage = amount - this->armour_damage_red;
-    if (damage > this->hit_points)
+        damage = amount - armour_damage_red;
+    if (damage > hit_points)
     {
-        this->hit_points = 0;
-        std::cout << this->_name << ">> Game over..." << std::endl;
+        hit_points = 0;
+        std::cout << _name << ">> Game over..." << std::endl;
     }
     else
     {
-        this->hit_points -= damage;
-        std::cout << this->_name << ">> That's all?! Try again!" << std::endl;
-        std::cout << "Armour reduction: " << this->armour_damage_red << std::endl;
+        hit_points -= damage;
+        std::cout << _name << ">> That's all?! Try again!" << std::endl;
+        std::cout << "Armour reduction: " << armour_damage_red << std::endl;
         std::cout << "Damage: " << damage << std::endl;
-        std::cout << "Hit Points: " << this->hit_points << "|" \
-        << this->max_hit_points << std::endl;
+        std::cout << "Hit Points: " << hit_points << "|" \
+        << max_hit_points << std::endl;
     }
     return ;
 };
 
 void    ClapTrap::beRepaired(unsigned int amount)
 {
-    if (this->energy_points < amount)
+    if (energy_points < amount)
     {
-        std::cout << this->_name << ">> Not enough energy..." << std::endl;
+        std::cout << _name << ">> Not enough energy..." << std::endl;
     }
     else
     {
-        this->energy_points -= amount;
-        this->hit_points += amount;
-        std::cout << this->_name << ">> Busy repairing..." << std::endl;
-        std::cout << "Hit Points: " << this->hit_points << std::endl;
+        energy_points -= amount;
+        hit_points += amount;
+        std::cout << _name << ">> Busy repairing..." << std::endl;
+        std::cout << "Hit Points: " << hit_points << std::endl;
     }
-    std::cout << "Energy Points: " << this->energy_points << std::endl;
+    std::cout << "Energy Points: " << energy_points << std::endl;
     return ;
 };
 
