@@ -5,131 +5,140 @@
 /*                                                     +:+                    */
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/03 11:36:24 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/08/04 14:31:52 by rvan-hou      ########   odam.nl         */
+/*   Created: 2020/08/03 15:28:06 by wbarendr      #+#    #+#                 */
+/*   Updated: 2020/08/04 15:07:21 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap()
+{
+	std::cout << "Constructing ClapTrap" << std::endl;
+	Hit_Points = 0;
+	Energy_Points = 0;
+	Max_Energy_points = 0;
+	Armor_damage_reduction = 0;
+};
+
 ClapTrap::ClapTrap(std::string name)
 {
-    std::cout << "ClapTrap Constructor called" << std::endl;
-	_name = name;
-	hit_points = 0;
-	energy_points = 0;
-	max_energy_points = 0;
-	armour_damage_red = 0;
-    return ;
-};
-
-ClapTrap::ClapTrap(){
-    std::cout << "ClapTrap Constructor called" << std::endl;
-	hit_points = 0;
-	energy_points = 0;
-	max_energy_points = 0;
-	armour_damage_red = 0;
-};
-
-ClapTrap::ClapTrap(const ClapTrap& clapTrap)
-{
-	*this = clapTrap;
+	std::cout << "Constructing Claptrap with given name" << std::endl;
+	Name = name;
 }
 
-ClapTrap::~ClapTrap()
-{
-    std::cout << "ClapTrap Destructor called" << std::endl;
-    return ;
-};
+ClapTrap::ClapTrap(const ClapTrap& clapTrap) { *this = clapTrap; };
 
-ClapTrap&   ClapTrap::operator=(ClapTrap const &obj)
+ClapTrap& ClapTrap::operator=(const ClapTrap& clapTrap)
 {
-	this->_name = obj._name;
-    this->hit_points = obj.hit_points;
-    this->max_hit_points = obj.max_hit_points;
-    this->energy_points = obj.energy_points;
-    this->max_energy_points = obj.max_energy_points;
-    this->level = obj.level;
-    this->melee_att_damage = obj.melee_att_damage;
-    this->ranged_att_damage = obj.ranged_att_damage;
-    this->armour_damage_red = obj.armour_damage_red;
-	return (*this);
-};
+	Hit_Points = clapTrap.Hit_Points;
+	Energy_Points = clapTrap.Energy_Points;
+	Max_Energy_points = clapTrap.Max_Energy_points;
+	Armor_damage_reduction = clapTrap.Armor_damage_reduction;
+	return *this;
+}
 
-void    ClapTrap::meleeAttack(std::string const &target)
+ClapTrap::~ClapTrap(){ std::cout << "Destructing Claptrap" << std::endl; };
+
+//
+
+void	ClapTrap::giveName(std::string name)
 {
-    std::cout << "CLAP-TP " << this->_name << " attacks " << target \
-              << " with melee, causing " << this->melee_att_damage \
-              << " points of damage !" << std::endl;
-    return ;
-};
+	Name = name;
+}
 
-void    ClapTrap::rangedAttack(std::string const & target)
+std::string ClapTrap::takeName()
 {
-    std::cout   << "CLAP-TP " << this->_name << " attacks " << target \
-                << " at range, causing " << this->ranged_att_damage \
-                << " points of damage !" << std::endl;
-    return ;
-};
+	return Name;
+}
 
-void    ClapTrap::takeDamage(unsigned int amount)
+void	ClapTrap::beRepaired(unsigned int amount)
 {
-    unsigned int    damage;
+	if (energyPoints() == 0){
+		std::cout << Name << " has been long gone..." << std::endl;	
+		return ;
+	}
+	std::cout << "Healing by " << amount << " points :)" << std::endl;
+	changeEnergy(amount);
+	changeHit(amount);
+}
 
-    if (amount <= this->armour_damage_red)
-        damage = 0;
-    else
-        damage = amount - this->armour_damage_red;
-    if (damage > this->hit_points)
-    {
-        this->hit_points = 0;
-        std::cout << this->_name << ">> Game over..." << std::endl;
-    }
-    else
-    {
-        this->hit_points -= damage;
-        std::cout << this->_name << ">> That's all?! Try again!" << std::endl;
-        std::cout << "Armour reduction: " << this->armour_damage_red << std::endl;
-        std::cout << "Damage: " << damage << std::endl;
-        std::cout << "Hit Points: " << this->hit_points << "|" \
-        << this->max_hit_points << std::endl;
-    }
-    return ;
-};
-
-void    ClapTrap::beRepaired(unsigned int amount)
+void 	ClapTrap::takeDamage(unsigned int amount)
 {
-    if (this->energy_points < amount)
-    {
-        std::cout << this->_name << ">> Not enough energy..." << std::endl;
-    }
-    else
-    {
-        this->energy_points -= amount;
-        this->hit_points += amount;
-        std::cout << this->_name << ">> Busy repairing..." << std::endl;
-        std::cout << "Hit Points: " << this->hit_points << std::endl;
-    }
-    std::cout << "Energy Points: " << this->energy_points << std::endl;
-    return ;
-};
+	if (hitPoints() == 0){
+		std::cout << Name << " has been long gone..." << std::endl;	
+		return ;
+	}
+	std::cout << Name << " says: wooooo, nNooohhh pleas don't hurt me !" << std::endl;
+	if (amount <= Armor_damage_reduction){
+		std::cout << Name << " says just kidding.. blocked joo whimpy ass attack" << std::endl;
+		return ;
+	}
+	changeHit(int(amount - Armor_damage_reduction) * -1);
+	std::cout << "got hit !!!<< " << Hit_Points << std::endl;
+	if (hitPoints() <= 0){
+		std::cout << Name << " was murdered!...." << std::endl;
+		changeHit(0);
+		return ;
+	}
+	std::cout << Name << " was severly beaten by " << (amount - Armor_damage_reduction) << std::endl;
+}
 
-std::string     ClapTrap::getName()
+void	ClapTrap::changeEnergy(int num)
 {
-    return (this->_name);
-};
+	if (Energy_Points + num > (int)Max_Energy_points){
+		Energy_Points = Max_Energy_points;
+		std::cout << Name << " has full Energy!!!" << std::endl;
+	}
+	else
+		Energy_Points += num;
+}
 
-unsigned int    ClapTrap::getMeleeAttackDamage()
+int		ClapTrap::energyPoints()
 {
-    return (this->melee_att_damage);
-};
+	return Energy_Points; 
+}
 
-unsigned int    ClapTrap::getRangedAttackDamage()
+void	ClapTrap::changeHit(int num)
 {
-    return (this->ranged_att_damage);
-};
+	if (num == 0) {
+		Hit_Points = 0;
+		return ;
+	}
+	if (Hit_Points + num > (int)Max_Hit_Points){
+		Hit_Points = Max_Hit_Points;
+		std::cout << Name << " has full Hit!!!" << std::endl;
+	}
+	else
+		Hit_Points += num;
+}
 
-unsigned int    ClapTrap::getArmourDamageReduction()
+int		ClapTrap::hitPoints()
 {
-    return (this->armour_damage_red);
-};
+	return Hit_Points; 
+}
+
+void	ClapTrap::changeArmorReduction(int num)
+{
+	Armor_damage_reduction = num;
+}
+
+int		ClapTrap::Max_Energy()
+{
+	return Max_Hit_Points;
+}
+
+void	ClapTrap::changeMax(unsigned int num)
+{
+	Max_Energy_points = num;	
+}
+
+int		ClapTrap::Max_Hit()
+{
+	return Max_Hit_Points;
+}
+
+void	ClapTrap::changeMaxHit(unsigned int num)
+{
+	Max_Hit_Points = num;
+}

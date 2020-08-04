@@ -1,71 +1,115 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   NinjaTrap.cpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/03 13:00:47 by rvan-hou          #+#    #+#             */
-/*   Updated: 2020/08/03 15:27:42 by rvan-hou         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   NinjaTrap.cpp                                      :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/08/03 17:27:07 by wbarendr      #+#    #+#                 */
+/*   Updated: 2020/08/04 15:15:08 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "NinjaTrap.hpp"
 
+NinjaTrap::NinjaTrap()
+{
+	Melee_attack_damage = 60;
+	Ranged_attack_damage = 5;
+	changeMax(120);
+	changeMaxHit(60);
+	changeHit(60);
+	changeEnergy(120);
+	changeArmorReduction(0);
+	std::cout << "Constructing Ninja" << std::endl;
+};
+
 NinjaTrap::NinjaTrap(std::string name)
 {
-    std::cout << "Hi! I'm Ninja " << name << "!" << std::endl;
-	this->_hitPoints = 60;
-	this->_maxHitPoints = 60;
-	this->_energyPoints = 120;
-	this->_maxEnergyPoints = 120;
-	this->_level = 1;
-	this->_name = name;
-	this->_meleeAttackDamage = 60;
-	this->_rangedAttackDamage = 5;
-	this->_armourDamageReduction = 0;
-    return ;
+	changeMax(120);
+	changeMaxHit(60);
+	changeHit(60);
+	changeEnergy(120);
+	changeArmorReduction(0);
+	std::cout << "Constructing Ninja with given name" << std::endl;
+	this->giveName(name);
+	Melee_attack_damage = 60;
+	Ranged_attack_damage = 5;
 };
 
-NinjaTrap::NinjaTrap()
-{ 
-};
+NinjaTrap::NinjaTrap(const NinjaTrap& ninjaTrap): ClapTrap(ninjaTrap)
+{};
 
-NinjaTrap::~NinjaTrap()
+NinjaTrap& NinjaTrap::operator=(const NinjaTrap& ninjaTrap)
 {
-    std::cout << "NinjaTrap Destructor called" << std::endl;	
-};
-
-NinjaTrap&   NinjaTrap::operator=(NinjaTrap const &obj)
-{
-	this->_hitPoints = obj._hitPoints;
-	this->_maxHitPoints = obj._maxHitPoints;
-	this->_energyPoints = obj._energyPoints;
-	this->_maxEnergyPoints = obj._maxEnergyPoints;
-	this->_level = obj._level;
-	this->_name = obj._name;
-	this->_meleeAttackDamage = obj._meleeAttackDamage;
-	this->_rangedAttackDamage = obj._rangedAttackDamage;
-	this->_armourDamageReduction = obj._armourDamageReduction;
-    return (*this);
+	ClapTrap::operator=(ninjaTrap);
+	return *this;
 }
 
-// void		NinjaTrap::ninjaShoebox(ClapTrap const &obj)
-// {
-	
-// }
+NinjaTrap::~NinjaTrap(){
+	std::cout << "Destructing Ninja!" << std::endl;
+};
+
+unsigned int	NinjaTrap::get_melee(){ return Melee_attack_damage; }
+unsigned int	NinjaTrap::get_max_energy(){ return Max_Energy_points; }
+unsigned int	NinjaTrap::get_energy(){ return Energy_Points; }
+
+
+void    NinjaTrap::rangedAttack(std::string const& target){
+	if (hitPoints() == 0){
+		std::cout << this->takeName() << " can't Trap no more..." << std::endl;	
+		return ;
+	}
+	std::cout << "man named " << this->takeName() << " attacks " << target << " at range, causing " <<
+	Ranged_attack_damage << " points of damage!" << std::endl; 
+}
+
+void	NinjaTrap::meleeAttack(std::string const& target){
+	if (hitPoints() == 0){
+		std::cout << this->takeName() << " can't Trap no more..." << std::endl;	
+		return ;
+	}
+	std::cout << "man named "  << this->takeName() << " attacks " << target << " melee, causing " <<
+	Melee_attack_damage << " points of damage!" << std::endl;
+}
+
+void		NinjaTrap::ninjaShoebox(ClapTrap &obj)
+{
+	std::cout << Name << " sneezes on " << obj.takeName() << std::endl;
+}
 
 void		NinjaTrap::ninjaShoebox(ScavTrap &obj)
 {
-	std::cout << this->_name << " throws Shoebox at " << obj.getName() << std::endl;
+	std::cout << Name << " shakes hands with " << obj.takeName() << std::endl;
 }
 
 void		NinjaTrap::ninjaShoebox(FragTrap &obj)
 {
-	std::cout << this->_name << " bought new shoes for " << obj.getName() << std::endl;	
+	std::cout << Name << " touches keyboard of " << obj.takeName() << std::endl;	
 }
 
 void		NinjaTrap::ninjaShoebox(NinjaTrap &obj)
 {
-	std::cout << this->_name << " sings about his new shoes for " << obj.getName() << std::endl;	
+	std::cout << Name << " gives covid to " << obj.takeName() << std::endl;	
 }
+
+// void	NinjaTrap::ninjaShoeBox(std::string const& target){
+// 	if (hitPoints() == 0){
+// 		std::cout << this->takeName() << " can't Trap no more..." << std::endl;	
+// 		return ;
+// 	}
+// 	std::string attacks[] = {" sneezes on ", " shakes hands with ", " touches keyboard of ", " gives covid to ", " kicks "} ;
+// 	static int yes = 1;
+// 	int num; 
+		
+// 	if (yes == 1){
+//         srand(time(NULL));
+//         yes = 0;
+//     }
+//     num = rand() % 5;
+// 	if (energyPoints() <= 25){
+// 		std::cout << this->takeName() << " is low on energy." << std::endl;	
+// 		return ;
+// 	}
+// 	std::cout << this->takeName() << attacks[num] << target << std::endl;
+// }

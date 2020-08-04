@@ -5,74 +5,82 @@
 /*                                                     +:+                    */
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/01 17:38:06 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/08/03 12:32:16 by rvan-hou      ########   odam.nl         */
+/*   Created: 2020/08/03 12:55:59 by wbarendr      #+#    #+#                 */
+/*   Updated: 2020/08/04 15:03:13 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
+
+ScavTrap::ScavTrap()
+{
+	std::cout << "Making a Scav" << std::endl;
+};
 
 ScavTrap::ScavTrap(std::string name)
 {
-    std::cout << "Hi! I'm ScavTrap " << name << "!" << std::endl;
-    this->_name = name;
-    this->hit_points = 100;
-    this->max_hit_points = 100;
-    this->energy_points = 50;
-    this->max_energy_points = 50;
-    this->level = 1;
-    this->melee_att_damage = 20;
-    this->ranged_att_damage = 15;
-    this->armour_damage_red = 3;
-    return ;
+	changeMax(50);
+	changeMaxHit(100);
+	changeHit(100);
+	changeEnergy(50);
+	changeArmorReduction(3);
+	std::cout << "Making a scav & naming it" << std::endl;
+	this->giveName(name);
 };
 
-ScavTrap::ScavTrap()
-{ 
-    std::cout << "Creating ScavTrap..." << std::endl;
-};
+ScavTrap::ScavTrap(const ScavTrap& scavTrap): ClapTrap(scavTrap)
+{};
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& scavTrap)
+{
+	ClapTrap::operator=(scavTrap);
+	return *this;
+}
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "ScavTrap Destructor called" << std::endl;
-    std::cout << this->_name << " has excited the game..." << std::endl;
+	std::cout << "Destroyer of scav" << std::endl;
 };
 
-ScavTrap&   ScavTrap::operator=(ScavTrap const &obj)
+void    ScavTrap::rangedAttack(std::string const& target)
 {
-    this->_name = obj._name;
-    this->hit_points = obj.hit_points;
-    this->max_hit_points = obj.max_hit_points;
-    this->energy_points = obj.energy_points;
-    this->max_energy_points = obj.max_energy_points;
-    this->level = obj.level;
-    this->melee_att_damage = obj.melee_att_damage;
-    this->ranged_att_damage = obj.ranged_att_damage;
-    this->armour_damage_red = obj.armour_damage_red;
-    return (*this);
-};
-
-void            ScavTrap::challengeNewcomer(std::string const & target)
-{
-	int index;
-    std::string challenge[] =
-    {
-        "Go for a nice relaxing walk",
-        "Go find another opponent, you'll never win",
-        "Give me 100+% during the eval",
-        "Just keep going",
-        "You're lucky, you're dismissed"
-    };
-    srand(time(NULL));
-    index = rand() % 5;
-	this->challenge = challenge[index];
-    std::cout << this->_name << ": Your challenge is: " << this->challenge \
-              << "! Have fun " << target << std::endl;
-    return ;
+	if (hitPoints() == 0){
+		std::cout << this->takeName() << " has been long gone..." << std::endl;	
+		return ;
+	}
+	std::cout << "The little scav named " << this->takeName() << " attacks " << target << " at range, causing " <<
+	Ranged_attack_damage << " points of damage!" << std::endl; 
 }
 
-std::string     ScavTrap::getChallenge(void)
+void	ScavTrap::meleeAttack(std::string const& target)
 {
-    return (this->challenge);
-};
+	if (hitPoints() == 0){
+		std::cout << this->takeName() << " Scav has been long gone..." << std::endl;	
+		return ;
+	}
+	std::cout << "The little scav named "  << this->takeName() << " attacks " << target << " melee, causing " <<
+	Melee_attack_damage << " points of damage!" << std::endl;
+}
+
+void	ScavTrap::challengeNewcomer(std::string const& target)
+{
+	if (hitPoints() == 0){
+		std::cout << this->takeName() << " Scav has been long gone..." << std::endl;	
+		return ;
+	}
+	std::string attacks[] = {"change all of it's passwords", "put drink on computer table at codam", "kick robijn", "play PingPong", "stay home"} ;
+	static int yes = 1;
+	int num; 
+		
+	if (yes == 1){
+        srand(time(NULL));
+        yes = 0;
+    }
+    num = rand() % 5;
+	if (energyPoints() <= 20){
+		std::cout << this->takeName() << " is low on energy." << std::endl;	
+		return ;
+	}
+	std::cout << this->takeName() << " challenges " << target << " to " << attacks[num] << std::endl;
+	changeEnergy(-20);
+}
