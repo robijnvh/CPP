@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 11:36:24 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/08/03 12:31:31 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/08/03 20:30:26 by robijnvanho   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ ClapTrap::ClapTrap(std::string name)
 {
     std::cout << "ClapTrap Constructor called" << std::endl;
 	this->_name = name;
-    this->hit_points = 100;
-    this->max_hit_points = 100;
-    this->energy_points = 100;
-    this->max_energy_points = 100;
-    this->level = 1;
-    this->melee_att_damage = 30;
-    this->ranged_att_damage = 20;
-    this->armour_damage_red = 5;
+    // this->hit_points = 100;
+    // this->max_hit_points = 100;
+    // this->energy_points = 100;
+    // this->max_energy_points = 100;
+    // this->level = 1;
+    // this->melee_att_damage = 30;
+    // this->ranged_att_damage = 20;
+    // this->armour_damage_red = 5;
     return ;
 };
 
