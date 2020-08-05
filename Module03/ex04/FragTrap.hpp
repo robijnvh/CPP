@@ -5,39 +5,37 @@
 /*                                                     +:+                    */
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/01 11:28:51 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/08/03 12:31:44 by rvan-hou      ########   odam.nl         */
+/*   Created: 2020/08/01 11:43:56 by wbarendr      #+#    #+#                 */
+/*   Updated: 2020/08/04 14:43:54 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _FRAGTRAP_HPP_
 # define _FRAGTRAP_HPP_
-# include <iostream>
-# include <string>
-# include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
-{
-    unsigned int         red_att_damage;
-    unsigned int         green_att_damage;
-    unsigned int         blue_att_damage;
-    unsigned int         vaulthunter_damage;
+#include "ClapTrap.hpp"
+#include <iostream>
+#include <string>
+
+class FragTrap : public ClapTrap{
+  protected:
+    const static int Melee_attack_damage = 30;
+    const static int Ranged_attack_damage = 20;
+
+  public:
+    FragTrap();
+    FragTrap(std::string name);
+	FragTrap(const FragTrap& fragTrap);
+	FragTrap& operator=(const FragTrap& fragTrap);
+    ~FragTrap();
+    void rangedAttack(std::string const& target);
+    void meleeAttack(std::string const& target);
+    void vaulthunter_dot_exe(std::string const& target);
     
-    public:
-        //constructors//destructors
-        FragTrap(std::string);
-        FragTrap(void);
-        ~FragTrap();
-        //operator
-        FragTrap  &operator=(FragTrap const &obj);
-        //random attack method
-		void    		rangedAttack(std::string const & target);
-        void    		meleeAttack(std::string const & target);
-        unsigned int    getVaultHunter_dot_exeDamage(void);
-        void            vaulthunter_dot_exe(std::string const & target);
-        void            redAttack(std::string const & target);
-        void            greenAttack(std::string const & target);
-        void            blueAttack(std::string const & target);
+    unsigned int get_ranged();
+    unsigned int get_armor();
+    unsigned int get_max_hit();
+    unsigned int get_hit();
 };
 
 #endif

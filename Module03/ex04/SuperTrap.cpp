@@ -1,63 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   SuperTrap.cpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/03 15:33:40 by rvan-hou          #+#    #+#             */
-/*   Updated: 2020/08/03 15:47:52 by rvan-hou         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   SuperTrap.cpp                                      :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/08/03 18:17:39 by wbarendr      #+#    #+#                 */
+/*   Updated: 2020/08/04 15:10:57 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "SuperTrap.hpp"
 
+SuperTrap::SuperTrap()
+{
+	std::cout << "Constructing Supa! " << std::endl;
+};
+
 SuperTrap::SuperTrap(std::string name)
 {
-    std::cout << "Hi! I'm Super " << name << "!" << std::endl;
-	this->_hitPoints = FragTrap::hit_points;
-	this->_maxHitPoints = FragTrap::max_hit_points;
-	this->_energyPoints = NinjaTrap::energy_points;
-	this->_maxEnergyPoints = NinjaTrap::max_energy_points;
-	this->_level = 1;
-	this->_name = name;
-	this->_meleeAttackDamage = NinjaTrap::melee_att_damage;
-	this->_rangedAttackDamage = FragTrap::ranged_att_damage;
-	this->_armourDamageReduction = FragTrap::armour_damage_red;
-    return ;
+    Hit_Points = get_hit();
+    Max_Hit_Points = get_max_hit();
+    Energy_Points = get_energy();
+    Max_Energy_points = get_max_energy();
+    Melee_attack_damage = get_melee();
+    Armor_damage_reduction = get_armor();
+    Ranged_attack_damage = get_ranged();
+	std::cout << "Constructing Supa with given name" << std::endl;
+	FragTrap::giveName(name);
+	NinjaTrap::giveName(name);
 };
 
-SuperTrap::SuperTrap()
-{ 
-};
+SuperTrap::SuperTrap(const SuperTrap& superTrap): FragTrap(superTrap)
+{};
 
-SuperTrap::~SuperTrap()
+SuperTrap& SuperTrap::operator=(const SuperTrap& superTrap)
 {
-    std::cout << "SuperTrap Destructor called" << std::endl;	
-};
-
-SuperTrap&   SuperTrap::operator=(SuperTrap const &obj)
-{
-	this->_hitPoints = obj._hitPoints;
-	this->_maxHitPoints = obj._maxHitPoints;
-	this->_energyPoints = obj._energyPoints;
-	this->_maxEnergyPoints = obj._maxEnergyPoints;
-	this->_level = obj._level;
-	this->_name = obj._name;
-	this->_meleeAttackDamage = obj._meleeAttackDamage;
-	this->_rangedAttackDamage = obj._rangedAttackDamage;
-	this->_armourDamageReduction = obj._armourDamageReduction;
-    return (*this);
+	FragTrap::operator=(superTrap);
+	return *this;
 }
 
-void    SuperTrap::meleeAttack(std::string const &target)
-{
-    this->NinjaTrap::meleeAttack(target);
-    return ;
+SuperTrap::~SuperTrap(){
+	std::cout << "Destructor of all supa's!" << std::endl;
 };
 
-void    SuperTrap::rangedAttack(std::string const & target)
-{
-    this->FragTrap::rangedAttack(target);    
-    return ;
-};
+void    SuperTrap::meleeAttack(std::string const& target){ NinjaTrap::meleeAttack(target); }
+void    SuperTrap::rangedAttack(std::string const& target){ FragTrap::rangedAttack(target); }
+
+void    SuperTrap::takeDamage(unsigned int num){
+    FragTrap::takeDamage(num);
+}

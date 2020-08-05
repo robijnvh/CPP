@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   NinjaTrap.hpp                                      :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/08/03 13:00:15 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/08/04 12:26:21 by rvan-hou      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/03 13:00:15 by rvan-hou          #+#    #+#             */
+/*   Updated: 2020/08/04 15:14:38 by rvan-hou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 
-class NinjaTrap : public ClapTrap {
+class NinjaTrap : public virtual ClapTrap {
 	unsigned int	_hitPoints;
 	unsigned int	_maxHitPoints;
 	unsigned int	_energyPoints;
@@ -32,15 +32,12 @@ class NinjaTrap : public ClapTrap {
 	public:
 		NinjaTrap();
 		NinjaTrap(std::string n);
-		NinjaTrap(const NinjaTrap& ninjaTrap);
 		~NinjaTrap();
         NinjaTrap 	&operator=(NinjaTrap const &obj);
-		void		meleeAttack(std::string const &target);
-		void		rangedAttack(std::string const & target);
+		void		ninjaShoebox(ClapTrap const &obj);
 		void		ninjaShoebox(ScavTrap &obj);
 		void		ninjaShoebox(FragTrap &obj);
 		void		ninjaShoebox(NinjaTrap &obj);
-		void		ninjaShoebox(ClapTrap &obj);
 };
 
 #endif

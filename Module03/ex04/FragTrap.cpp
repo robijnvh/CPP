@@ -5,134 +5,93 @@
 /*                                                     +:+                    */
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/01 11:30:13 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/08/03 12:32:05 by rvan-hou      ########   odam.nl         */
+/*   Created: 2020/08/01 11:51:07 by wbarendr      #+#    #+#                 */
+/*   Updated: 2020/08/04 15:08:49 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
 #include "FragTrap.hpp"
+
+FragTrap::FragTrap() 
+{
+	changeMax(100);
+	changeMaxHit(100);
+	changeHit(100);
+	changeEnergy(100);
+	changeArmorReduction(5);
+	std::cout << "Constructing FragTrap" << std::endl;
+};
 
 FragTrap::FragTrap(std::string name)
 {
-    std::cout << "Hi! I'm " << name << "!" << std::endl;
-    this->_name = name;
-    this->hit_points = 100;
-    this->max_hit_points = 100;
-    this->energy_points = 100;
-    this->max_energy_points = 100;
-    this->level = 1;
-    this->melee_att_damage = 30;
-    this->ranged_att_damage = 20;
-    this->armour_damage_red = 5;
-    this->red_att_damage = 42;
-    this->green_att_damage = 1;
-    this->blue_att_damage = 100;
-    this->vaulthunter_damage = 0;
-    return ;
+	changeMax(100);
+	changeMaxHit(100);
+	changeHit(100);
+	changeEnergy(100);
+	changeArmorReduction(5);
+	std::cout << "Constructing FragTrap with given name" << std::endl;
+	this->giveName(name);
 };
 
-FragTrap::FragTrap()
-{ 
-};
+FragTrap::FragTrap(const FragTrap& fragTrap): ClapTrap(fragTrap)
+{};
+
+FragTrap& FragTrap::operator=(const FragTrap& fragTrap)
+{
+	ClapTrap::operator=(fragTrap);
+	return *this;
+}
 
 FragTrap::~FragTrap()
 {
-    std::cout << "FragTrap Destructor called" << std::endl;	
-    std::cout << this->_name << " has left the game..." << std::endl;
+	std::cout << "Destructing FragTrap" << std::endl;
 };
 
-FragTrap&   FragTrap::operator=(FragTrap const &obj)
-{
-    this->_name = obj._name;
-    this->hit_points = obj.hit_points;
-    this->max_hit_points = obj.max_hit_points;
-    this->energy_points = obj.energy_points;
-    this->max_energy_points = obj.max_energy_points;
-    this->level = obj.level;
-    this->melee_att_damage = obj.melee_att_damage;
-    this->ranged_att_damage = obj.ranged_att_damage;
-    this->armour_damage_red = obj.armour_damage_red;
-    this->red_att_damage = obj.red_att_damage;
-    this->green_att_damage = obj.green_att_damage;
-    this->blue_att_damage = obj.blue_att_damage;
-    this->vaulthunter_damage = obj.vaulthunter_damage;
-    return (*this);
-};
+unsigned int	FragTrap::get_ranged(){ return Ranged_attack_damage; }
+unsigned int	FragTrap::get_armor(){ return Armor_damage_reduction; }
+unsigned int	FragTrap::get_hit(){ return Hit_Points; }
+unsigned int	FragTrap::get_max_hit(){ return Max_Hit_Points; }
 
-void    FragTrap::meleeAttack(std::string const &target)
+void    FragTrap::rangedAttack(std::string const& target)
 {
-    this->vaulthunter_damage = this->melee_att_damage;
-    std::cout << "FR4G-TP " << this->_name << " attacks " << target \
-              << " with melee, causing " << this->melee_att_damage \
-              << " points of damage !" << std::endl;
-    return ;
-};
+	if (hitPoints() == 0){
+		std::cout << this->takeName() << " is already dead.." << std::endl;	
+		return ;
+	}
+	std::cout << "FR4G-TP " << this->takeName() << " attacks " << target << " at range, causing " <<
+	Ranged_attack_damage << " points of damage!" << std::endl; 
+}
 
-void    FragTrap::rangedAttack(std::string const & target)
+void	FragTrap::meleeAttack(std::string const& target)
 {
-    this->vaulthunter_damage = this->ranged_att_damage;
-    std::cout   << "FR4G-TP " << this->_name << " attacks " << target \
-                << " at range, causing " << this->ranged_att_damage \
-                << " points of damage !" << std::endl;
-    return ;
-};
+	if (hitPoints() == 0){
+		std::cout << this->takeName() << " is already dead.." << std::endl;	
+		return ;
+	}
+	std::cout << "FR4G-TP " << this->takeName() << " attacks " << target << " melee, causing " <<
+	Melee_attack_damage << " points of damage!" << std::endl;
+}
 
-void    FragTrap::redAttack(std::string const & target)
+void	FragTrap::vaulthunter_dot_exe(std::string const& target)
 {
-    this->vaulthunter_damage = this->red_att_damage;
-    std::cout   << "FR4G-TP " << this->_name << " attacks " << target \
-                << " with red power, causing " << this->red_att_damage \
-                << " points of damage !" << std::endl;
-    
-};
-
-void    FragTrap::greenAttack(std::string const & target)
-{
-    this->vaulthunter_damage = this->green_att_damage;
-    std::cout   << "FR4G-TP " << this->_name << " attacks " << target \
-                << " with green power, causing " << this->green_att_damage \
-                << " points of damage !" << std::endl;
-    
-};
-
-void    FragTrap::blueAttack(std::string const & target)
-{
-    this->vaulthunter_damage = this->blue_att_damage;
-    std::cout   << "FR4G-TP " << this->_name << " attacks " << target \
-                << " with blue power, causing " << this->blue_att_damage \
-                << " points of damage !" << std::endl;
-    
-};
-
-void            FragTrap::vaulthunter_dot_exe(std::string const & target)
-{
-    int   attack;
-
-  if (this->energy_points < 25)
-  {
-        std::cout << this->_name << ">> Not enough energy..." << std::endl;
-  }
-  else
-  {
-        this->energy_points -= 25;
+	if (hitPoints() == 0){
+		std::cout << this->takeName() << " is already dead.." << std::endl;	
+		return ;
+	}
+	std::string attacks[] = {" tickles feet", " hacks computer", " disses the mother", " reads diary", " puts salt in coffee"} ;
+	static int yes = 1;
+	int num; 
+		
+	if (yes == 1){
         srand(time(NULL));
-        attack = rand() % 5;
-        if (attack == 0)
-            FragTrap::redAttack(target);
-        else if (attack == 1)
-            FragTrap::greenAttack(target);
-        else if (attack == 2)
-            FragTrap::blueAttack(target);
-        else if (attack == 3)
-            FragTrap::meleeAttack(target);
-        else
-            FragTrap::rangedAttack(target);
-  }
-  return ;
-};
-
-unsigned int    FragTrap::getVaultHunter_dot_exeDamage()
-{
-    return (this->vaulthunter_damage);
-};
+        yes = 0;
+    }
+    num = rand() % 5;
+	std::cout << "checking vault: " << energyPoints() << std::endl; 
+	if (energyPoints() <= 25){
+		std::cout << this->takeName() << " doesn't have enough energy." << std::endl;	
+		return ;
+	}
+	std::cout << this->takeName() << attacks[num] << " of " << target << std::endl;
+	changeEnergy(-25);
+}
