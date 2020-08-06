@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/03 15:29:48 by wbarendr          #+#    #+#             */
-/*   Updated: 2020/08/04 14:41:01 by rvan-hou         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ClapTrap.hpp                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/08/03 15:29:48 by wbarendr      #+#    #+#                 */
+/*   Updated: 2020/08/04 16:57:57 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class ClapTrap
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap& clapTrap);
 		ClapTrap& operator=(const ClapTrap& clapTrap);
-		~ClapTrap();
+		virtual ~ClapTrap();
 		std::string   takeName();
 		void          giveName(std::string name);
 		void          takeDamage(unsigned int amount);

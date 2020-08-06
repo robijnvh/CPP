@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 11:28:51 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/08/03 15:59:43 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/08/04 16:54:01 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class FragTrap : public virtual ClapTrap
         //constructors//destructors
         FragTrap(std::string);
         FragTrap(void);
-        ~FragTrap();
+        virtual ~FragTrap();
         //operator
         FragTrap  &operator=(FragTrap const &obj);
         //random attack method

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/03 13:00:15 by rvan-hou          #+#    #+#             */
-/*   Updated: 2020/08/04 15:14:38 by rvan-hou         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   NinjaTrap.hpp                                      :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/08/03 13:00:15 by rvan-hou      #+#    #+#                 */
+/*   Updated: 2020/08/04 16:53:55 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class NinjaTrap : public virtual ClapTrap {
 	public:
 		NinjaTrap();
 		NinjaTrap(std::string n);
-		~NinjaTrap();
+		virtual ~NinjaTrap();
         NinjaTrap 	&operator=(NinjaTrap const &obj);
 		void		ninjaShoebox(ClapTrap const &obj);
 		void		ninjaShoebox(ScavTrap &obj);

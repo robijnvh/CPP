@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 17:26:06 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/04 15:16:41 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/08/04 16:57:46 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <iostream>
 # include <string>
 
-class NinjaTrap : public ClapTrap{
+class NinjaTrap : virtual public ClapTrap{
   protected:
     
   public:

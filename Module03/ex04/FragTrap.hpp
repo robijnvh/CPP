@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 11:43:56 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/04 14:43:54 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/08/04 16:57:43 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <iostream>
 #include <string>
 
-class FragTrap : public ClapTrap{
+class FragTrap : virtual public ClapTrap{
   protected:
     const static int Melee_attack_damage = 30;
     const static int Ranged_attack_damage = 20;
