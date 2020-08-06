@@ -3,20 +3,14 @@
 /*                                                        ::::::::            */
 /*   Sorcerer.cpp                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/05 14:13:06 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/08/05 18:32:37 by robijnvanho   ########   odam.nl         */
+/*   Updated: 2020/08/06 14:16:15 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
-
-// Sorcerer::Sorcerer()
-// {
-//     // throw (void);
-//     std::cout << "Constructing Sorcerer" << std::endl;
-// }
 
 Sorcerer::Sorcerer(std::string name, std::string title): _name(name), _title(title)
 {
@@ -38,4 +32,24 @@ Sorcerer&    Sorcerer::operator=(Sorcerer const &obj)
 Sorcerer::~Sorcerer(void)
 {
     std::cout << _name << ", " << _title << " is dead. Consequences will never be the same!" << std::endl;
+}
+
+std::string		Sorcerer::getName(void) const
+{
+	return (_name);
+}
+
+std::string		Sorcerer::getTitle(void) const
+{
+	return (_title);
+}
+
+void 			Sorcerer::polymorph(Victim const &v) const
+{
+	v.getPolymorphed();
+}
+
+std::ostream&	operator<< (std::ostream &out, Sorcerer const &s)
+{
+	return out << "I am " << s.getName() << ", " << s.getTitle() << ", and I like ponies!" << std::endl;
 }
