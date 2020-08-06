@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/01 11:28:12 by robijnvanho       #+#    #+#             */
-/*   Updated: 2020/08/03 14:50:42 by rvan-hou         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   main.cpp                                           :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/08/01 11:28:12 by robijnvanho   #+#    #+#                 */
+/*   Updated: 2020/08/03 20:32:46 by robijnvanho   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int     main(void)
     std::cout << "Game started." << std::endl;
     ScavTrap player1("player1");
    	FragTrap player2("player2");
+
 
     std::cout << std::endl << "Round 1" << std::endl;
     player1.meleeAttack(player2.getName());
