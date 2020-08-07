@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 12:41:55 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/08/07 12:50:52 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/08/07 13:00:31 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,17 @@ int				Squad::getCount(void) const
 
 ISpaceMarine*	Squad::getUnit(int x)	const
 {
-	t_unit	*tmp;
+	// t_unit	*tmp;
 
-	tmp = _unit;
-	for (int i = 0;i < x;i++)
-	{
-		if (tmp)
-			tmp = tmp->next;
-		else
-			return (NULL);
-	}
-	return (tmp->unit);
+	// tmp = _unit;
+	// for (int i = 0;i < x;i++)
+	// {
+	// 	if (tmp)
+	// 		tmp = tmp->next;
+	// 	else
+	// 		return (NULL);
+	// }
+	// return (tmp->unit);
 }
 
 int				Squad::push(ISpaceMarine*)
