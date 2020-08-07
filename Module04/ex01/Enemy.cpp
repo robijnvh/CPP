@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   Enemy.cpp                                          :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/08/06 15:26:14 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/08/06 15:35:34 by rvan-hou      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   Enemy.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/06 15:26:14 by rvan-hou          #+#    #+#             */
+/*   Updated: 2020/08/07 11:17:44 by rvan-hou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Enemy.hpp"
 
-Enemy::Enemy(int hp, std::string const & type): _hp(hp), _type(type)
-{
-	std::cout << "Enemy constructor called (with args)" << std::endl;	
-}
+Enemy::Enemy(int hp, std::string const & type): _hp(hp), _type(type) {};
 
 Enemy::Enemy(const Enemy &obj)
 {
@@ -24,11 +21,30 @@ Enemy::Enemy(const Enemy &obj)
 
 Enemy&	Enemy::operator=(Enemy const &obj)
 {
-    _hp= obj._hp;
+    _hp= obj.getHP();
+	_type = obj.getType();
     return (*this);
 }  
 
-Enemy::~Enemy()
+Enemy::~Enemy() {};
+
+std::string const&		Enemy::getType(void) const 
 {
-	std::cout << "Enemy destructor called" << std::endl;
+	return (_type);
+}
+
+int		Enemy::getHP(void) const
+{
+	return (_hp);
+}
+
+void	Enemy::takeDamage(int _dmg)
+{
+	int amount;
+
+	amount = _hp - _dmg;
+	if (amount > 0)
+		_hp = _hp - _dmg;
+	else
+		_hp = 0;
 }

@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   RadScorpion.hpp                                    :+:    :+:            */
+/*   AssaultTerminator.hpp                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/07 10:33:48 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/08/07 10:56:50 by rvan-hou      ########   odam.nl         */
+/*   Created: 2020/08/07 12:37:13 by rvan-hou      #+#    #+#                 */
+/*   Updated: 2020/08/07 12:37:37 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _RADSCORPION_HPP_
-# define _RADSCORPION_HPP_
+#ifndef _ASSAULTTERMINATOR_HPP_
+# define _ASSAULTTERMINATOR_HPP_
 # include <iostream>
 # include <string>
-# include "Enemy.hpp"
+# include "ISpaceMarine.hpp"
 
-class RadScorpion: public Enemy {
-	
+class	AssaultTerminator : public ISpaceMarine {
 	public:
-		RadScorpion(void);
-		RadScorpion(const RadScorpion &obj);
-	    RadScorpion    &operator=(RadScorpion const &obj);
-		virtual ~RadScorpion();
+		AssaultTerminator(void);
+		AssaultTerminator(const AssaultTerminator &obj);
+		virtual ~AssaultTerminator(void);
+		AssaultTerminator&	operator = (const AssaultTerminator &obj);
+		ISpaceMarine*	clone(void)			const;
+		void			battleCry(void)		const;
+		void			rangedAttack(void)	const;
+		void			meleeAttack(void)	const;
 };
 
 #endif

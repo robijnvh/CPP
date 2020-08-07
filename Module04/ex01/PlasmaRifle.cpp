@@ -6,15 +6,14 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/06 14:39:52 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/08/06 15:16:54 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/08/07 11:18:42 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PlasmaRifle.hpp"
 
-PlasmaRifle::PlasmaRifle(): AWeapon("Plasma Rifle", 21, 5)
+PlasmaRifle::PlasmaRifle(): AWeapon("Plasma Rifle", 5, 21)
 {
-	std::cout << "PlasmaRifle constructor called" << std::endl;
 	_outputAttack = "* piouuu piouuu piouuu *";
 }
 
@@ -26,10 +25,7 @@ PlasmaRifle&	PlasmaRifle::operator=(PlasmaRifle const &obj)
 	return (*this);
 }
 
-PlasmaRifle::~PlasmaRifle(void)
-{
-	std::cout << "PlasmaRifle destructor called" << std::endl;	
-}
+PlasmaRifle::~PlasmaRifle(void) {};
 
 void			PlasmaRifle::attack(void) const
 {

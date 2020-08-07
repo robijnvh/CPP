@@ -6,15 +6,14 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/06 14:56:39 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/08/06 15:16:57 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/08/07 11:18:55 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PowerFist.hpp"
 
-PowerFist::PowerFist(): AWeapon("Power Fist", 50, 8)
+PowerFist::PowerFist(): AWeapon("Power Fist", 8, 50)
 {
-	std::cout << "PowerFist constructor called" << std::endl;
 	_outputAttack = "* pschhh... SBAM! *";
 }
 
@@ -26,10 +25,7 @@ PowerFist&	PowerFist::operator=(PowerFist const &obj)
 	return (*this);
 }
 
-PowerFist::~PowerFist(void)
-{
-	std::cout << "PowerFist destructor called" << std::endl;	
-}
+PowerFist::~PowerFist(void) {};
 
 void			PowerFist::attack(void) const
 {

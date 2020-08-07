@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   AWeapon.hpp                                        :+:    :+:            */
+/*   TacticalMarine.hpp                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/06 14:22:21 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/08/07 11:14:07 by rvan-hou      ########   odam.nl         */
+/*   Created: 2020/08/07 12:28:11 by rvan-hou      #+#    #+#                 */
+/*   Updated: 2020/08/07 12:34:14 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _AWEAPON_HPP_
-# define _AWEAPON_HPP_
+#ifndef _TACTICALMARINE_HPP_
+# define _TACTICALMARINE_HPP_
 # include <iostream>
 # include <string>
+# include "ISpaceMarine.hpp"
 
-class AWeapon {
-	std::string				_name;
-	int						_apcost;
-	int						_damage;
-	
+class	TacticalMarine : public ISpaceMarine {
 	public:
-		AWeapon();
-		AWeapon(std::string const & name, int apcost, int damage);
-		AWeapon(const AWeapon &obj);
-	    AWeapon    &operator=(AWeapon const &obj);
-		virtual ~AWeapon();
-		std::string getName() const;
-		int getAPCost() const;
-		int getDamage() const;
-		virtual void attack() const = 0;
+		TacticalMarine(void);
+		TacticalMarine(const TacticalMarine &obj);
+		virtual ~TacticalMarine(void);
+		TacticalMarine&	operator = (const TacticalMarine &obj);
+		ISpaceMarine*	clone(void)			const;
+		void			battleCry(void)		const;
+		void			rangedAttack(void)	const;
+		void			meleeAttack(void)	const;
 };
 
 #endif

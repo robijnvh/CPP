@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   RadScorpion.hpp                                    :+:    :+:            */
+/*   ISquad.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/07 10:33:48 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/08/07 10:56:50 by rvan-hou      ########   odam.nl         */
+/*   Created: 2020/08/07 12:16:22 by rvan-hou      #+#    #+#                 */
+/*   Updated: 2020/08/07 12:25:55 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _RADSCORPION_HPP_
-# define _RADSCORPION_HPP_
-# include <iostream>
-# include <string>
-# include "Enemy.hpp"
+#ifndef _ISQUAD_HPP_
+# define _ISQUAD_HPP_
+# include "ISpaceMarine.hpp"
 
-class RadScorpion: public Enemy {
+class ISquad {
 	
 	public:
-		RadScorpion(void);
-		RadScorpion(const RadScorpion &obj);
-	    RadScorpion    &operator=(RadScorpion const &obj);
-		virtual ~RadScorpion();
+		virtual ~ISquad() {};
+		virtual int getCount() const = 0;
+		virtual ISpaceMarine* getUnit(int) const = 0;
+		virtual int push(ISpaceMarine*) = 0;
 };
 
 #endif

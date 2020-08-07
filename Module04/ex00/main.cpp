@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/05 14:13:01 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/08/06 14:44:33 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/08/07 10:50:47 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 int     main(void)
 {
+	// Sorcerer you;
 	// Given main
 	Sorcerer robert("Robert", "the Magnificent");
 	Victim jim("Jimmy");

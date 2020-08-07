@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   AWeapon.hpp                                        :+:    :+:            */
+/*   Squad.hpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/06 14:22:21 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/08/07 11:14:07 by rvan-hou      ########   odam.nl         */
+/*   Created: 2020/08/07 12:40:53 by rvan-hou      #+#    #+#                 */
+/*   Updated: 2020/08/07 12:45:37 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _AWEAPON_HPP_
-# define _AWEAPON_HPP_
+#ifndef _SQUAD_HPP_
+# define _SQUAD_HPP_
 # include <iostream>
 # include <string>
+# include "ISquad.hpp"
 
-class AWeapon {
-	std::string				_name;
-	int						_apcost;
-	int						_damage;
-	
+typedef struct		s_unit
+{
+	ISpaceMarine	*unit;
+	s_unit			*next;
+}					t_unit;
+
+class	Squad : public ISquad {
+	int		_count;
+	t_unit	*_unit;
+
 	public:
-		AWeapon();
-		AWeapon(std::string const & name, int apcost, int damage);
-		AWeapon(const AWeapon &obj);
-	    AWeapon    &operator=(AWeapon const &obj);
-		virtual ~AWeapon();
-		std::string getName() const;
-		int getAPCost() const;
-		int getDamage() const;
-		virtual void attack() const = 0;
+		Squad(void);
+		Squad(const Squad &obj);
+		~Squad(void);
+		Squad&	operator = (const Squad &obj);
+		int				getCount(void)	const;
+		ISpaceMarine*	getUnit(int)	const;
+		int				push(ISpaceMarine*);
 };
 
 #endif
