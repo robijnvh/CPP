@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 16:24:25 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/09/16 11:32:46 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/16 12:35:38 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,4 +162,23 @@ std::ostream	&operator<< (std::ostream &out, const Bureaucrat &rhs)
     out << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() \
         << std::endl;
     return (out);
+}
+
+void Bureaucrat::executeForm(Form const &form)
+{
+	if (form.getGradeToExec() < this->_grade)
+	{
+		std::cerr << this->_name << " cannot execute " << form.getName()
+				  << " because Bureaucrat grade too low" << std::endl;
+	}
+	else if (!form.getSigned())
+	{
+		std::cerr << this->_name << " cannot execute " << form.getName()
+				  << " because Form is not signed" << std::endl;
+	}
+	else
+	{
+		form.execute(*this);
+		std::cout << this->_name << " executes " << form.getName() << std::endl;
+	}
 }

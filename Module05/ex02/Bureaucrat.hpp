@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 16:24:42 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/09/16 10:33:52 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/16 12:35:19 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ class Bureaucrat {
     	void        setGrade(int);
     	void 		setName(std::string);
 		void		signForm(Form &form);
+		void		executeForm(Form const &form);
 };
 
 std::ostream&	operator<< (std::ostream &out, Bureaucrat const &s);

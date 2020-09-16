@@ -6,22 +6,22 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/16 10:05:50 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/09/16 10:51:41 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/16 12:38:14 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form(void) : _signed(false), _gradeToSign(1), _gradeToExec(1), _name("undefined") { return ; }
+// Form::Form(void) : _signed(false), _gradeToSign(1), _gradeToExec(1), _name("undefined") { return ; }
 
-Form::Form(const Form &obj) : _signed(obj._signed), _gradeToSign(obj._gradeToSign), _gradeToExec(obj._gradeToExec), _name(obj._name)
+Form::Form(const Form &obj) : _signed(obj._signed), _gradeToSign(obj._gradeToSign), _gradeToExec(obj._gradeToExec), _name(obj._name), _target(obj._target)
 {
     *this = obj;
     return ;
 }
 
-Form::Form(std::string name, int grade_to_sign, int grade_to_execute) : _signed(false), _gradeToSign(grade_to_sign), _gradeToExec(grade_to_execute), _name(name)
+Form::Form(std::string name, int grade_to_sign, int grade_to_execute, std::string const &target) : _signed(false), _gradeToSign(grade_to_sign), _gradeToExec(grade_to_execute), _name(name), _target(target)
 {
     if (this->_gradeToSign < 1 || this->_gradeToExec < 1)
     {
@@ -56,6 +56,8 @@ std::string				Form::getName(void) const	{ return this->_name; }
 int 					Form::getGradeToSign(void) const { return this->_gradeToSign; }
 int 					Form::getGradeToExec(void) const { return this->_gradeToExec; }
 bool 					Form::getSigned(void) const { return this->_signed; }
+void 					Form::setTarget(std::string const &target) { this->_target = target; }
+std::string 			const &Form::getTarget(void) const { return this->_target; }
 
 void Form::beSigned(Bureaucrat &obj)
 {
@@ -104,4 +106,17 @@ Form::GradeTooLowException	&Form::GradeTooLowException::operator= (const GradeTo
 const char	*Form::GradeTooLowException::what() const throw()
 {
     return ("Grade is too low...");
+}
+
+const char *Form::FormNotSignedException::what() const throw()
+{
+	return "Form Exception: Not signed before being executed";
+}
+
+void	Form::execute(Bureaucrat const &executor) const
+{
+	if (!this->_signed)
+		throw Form::FormNotSignedException();
+	if (executor.getGrade() > this->_gradeToExec)
+		throw Form::GradeTooLowException();
 }

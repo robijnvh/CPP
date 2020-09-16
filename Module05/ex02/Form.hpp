@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/16 09:54:57 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/09/16 10:50:59 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/16 12:23:45 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@
 class Bureaucrat;
 
 class Form {
+	Form(void);
 	bool                      _signed;
     const int                 _gradeToSign;
     const int                 _gradeToExec;
     const std::string         _name;
+	std::string				  _target;
 
 	public:
 		class GradeTooHighException : public std::exception
@@ -47,9 +49,13 @@ class Form {
 		        virtual const char    *what() const throw();
 	    };
 
-	    Form(void);
+		class FormNotSignedException : public std::exception
+		{
+			virtual const char *what() const throw();
+		};
+
 	    Form(const Form &obj);
-	    Form(std::string name, int gradeToSign, int gradeToExec);
+	    Form(std::string name, int gradeToSign, int gradeToExec, std::string const &target);
 	    ~Form(void);
 	    Form                      &operator= (const Form &obj);
 	    void                      beSigned(Bureaucrat &bureaucrat);
@@ -57,6 +63,9 @@ class Form {
 	    int                       getGradeToSign(void) const;
 	    int                       getGradeToExec(void) const;
 	    std::string               getName(void) const;
+		std::string				  const &getTarget() const;
+		void					  setTarget(std::string const &target);
+		virtual void 			  execute(Bureaucrat const &executor) const = 0;
 };
 
 std::ostream                  &operator<< (std::ostream &out, const Form &obj);
