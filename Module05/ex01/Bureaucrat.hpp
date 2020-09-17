@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 16:24:42 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/09/16 10:33:52 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/17 12:27:26 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class Bureaucrat {
 		Bureaucrat(int, std::string);
 		Bureaucrat(const Bureaucrat &obj);
 		Bureaucrat	&operator=(Bureaucrat const &obj);
-		virtual ~Bureaucrat(void);
+		virtual 	~Bureaucrat(void);
 		int			getGrade(void) const;
 		std::string	getName(void) const;
 		void        incrementGrade(void);

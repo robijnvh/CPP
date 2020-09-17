@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 14:19:02 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/09/03 16:17:27 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/17 12:25:46 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Bureaucrat::Bureaucrat(void)
 {
-    this->_name = "undef";
+    this->_name = "empty";
     this->_grade = 1;
     return ;
 }
@@ -140,7 +140,6 @@ int	Bureaucrat::getGrade(void) const
 
 std::ostream	&operator<< (std::ostream &out, const Bureaucrat &rhs)
 {
-    out << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() \
-        << std::endl;
+    out << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << std::endl;
     return (out);
 }

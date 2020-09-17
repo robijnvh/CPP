@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/16 12:26:03 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/09/16 12:29:00 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/17 12:38:43 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include "Form.hpp"
 
 class RobotomyRequestForm : public Form {
-	// std::string	_target;
 	RobotomyRequestForm(void);
 
 	public:

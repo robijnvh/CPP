@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 16:24:25 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/09/16 12:35:38 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/17 12:36:02 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Bureaucrat::Bureaucrat(void)
 {
-    this->_name = "undef";
+    this->_name = "empty";
     this->_grade = 1;
     return ;
 }
@@ -53,9 +53,9 @@ Bureaucrat	&Bureaucrat::operator= (const Bureaucrat &obj)
 
 Bureaucrat::	GradeTooLowException::GradeTooLowException(void) { return ;}
 
-Bureaucrat::	GradeTooLowException::GradeTooLowException(const GradeTooLowException &src)
+Bureaucrat::	GradeTooLowException::GradeTooLowException(const GradeTooLowException &obj)
 {
-    *this = src;
+    *this = obj;
     return ;
 }
 
@@ -82,9 +82,9 @@ Bureaucrat::	GradeTooHighException::GradeTooHighException(const GradeTooHighExce
 
 Bureaucrat::	GradeTooHighException::~GradeTooHighException(void) throw() { return ;}
 
-Bureaucrat::GradeTooHighException	&Bureaucrat::GradeTooHighException::operator= (const GradeTooHighException &rhs)
+Bureaucrat::GradeTooHighException	&Bureaucrat::GradeTooHighException::operator= (const GradeTooHighException &obj)
 {
-    static_cast <void> (rhs);
+    static_cast <void> (obj);
     return (*this);
 }
 
@@ -114,12 +114,12 @@ void	Bureaucrat::signForm(Form &form)
 {
 	if (form.getGradeToSign() < this->_grade)
 	{
-		std::cerr << this->_name << " cannot sign " << form.getName()
+		std::cerr << this->_name << " can't sign " << form.getName()
 				  << " because Bureaucrat grade too low" << std::endl;
 	}
 	else if (form.getSigned())
 	{
-		std::cerr << this->_name << " cannot sign " << form.getName()
+		std::cerr << this->_name << " can't sign " << form.getName()
 				  << " because Form is already signed" << std::endl;
 	}
 	else
@@ -157,9 +157,9 @@ int	Bureaucrat::getGrade(void) const
     return (this->_grade);
 }
 
-std::ostream	&operator<< (std::ostream &out, const Bureaucrat &rhs)
+std::ostream	&operator<< (std::ostream &out, const Bureaucrat &obj)
 {
-    out << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() \
+    out << obj.getName() << ", Bureaucrat grade " << obj.getGrade() \
         << std::endl;
     return (out);
 }
@@ -168,12 +168,12 @@ void Bureaucrat::executeForm(Form const &form)
 {
 	if (form.getGradeToExec() < this->_grade)
 	{
-		std::cerr << this->_name << " cannot execute " << form.getName()
+		std::cerr << this->_name << " can't execute " << form.getName()
 				  << " because Bureaucrat grade too low" << std::endl;
 	}
 	else if (!form.getSigned())
 	{
-		std::cerr << this->_name << " cannot execute " << form.getName()
+		std::cerr << this->_name << " can't execute " << form.getName()
 				  << " because Form is not signed" << std::endl;
 	}
 	else

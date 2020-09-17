@@ -6,13 +6,11 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/16 11:54:55 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/09/16 12:25:52 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/17 12:38:50 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
-
-// ShrubberyCreationForm::ShrubberyCreationForm(void) {return ; }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target) : Form("Shrubbery Creation Form", 145, 137, target) { return ; }
 		

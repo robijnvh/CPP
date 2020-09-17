@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/16 12:31:32 by rvan-hou          #+#    #+#             */
-/*   Updated: 2020/09/16 12:33:02 by rvan-hou         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   PresidentialPardonForm.cpp                         :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/09/16 12:31:32 by rvan-hou      #+#    #+#                 */
+/*   Updated: 2020/09/17 12:37:09 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
-
-// PresidentialPardonForm::PresidentialPardonForm(void) {return ; }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string const &target) : Form("Shrubbery Creation Form", 25, 5, target) { return ; }
 		

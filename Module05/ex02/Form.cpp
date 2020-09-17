@@ -6,14 +6,12 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/16 10:05:50 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/09/16 12:38:14 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/17 12:39:50 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
-
-// Form::Form(void) : _signed(false), _gradeToSign(1), _gradeToExec(1), _name("undefined") { return ; }
 
 Form::Form(const Form &obj) : _signed(obj._signed), _gradeToSign(obj._gradeToSign), _gradeToExec(obj._gradeToExec), _name(obj._name), _target(obj._target)
 {
@@ -47,8 +45,8 @@ Form	&Form::operator= (const Form &obj)
 
 std::ostream &operator<<(std::ostream &out, Form const &rhs)
 {
-	out << "Form: " << rhs.getName() << " (sign " << rhs.getGradeToSign()
-		<< ", exec " << rhs.getGradeToExec() << ")";
+	out << "Form " << rhs.getName() << " -> sign " << rhs.getGradeToSign()
+		<< ": exec " << rhs.getGradeToExec() << std::endl;
 	return out;
 }
 

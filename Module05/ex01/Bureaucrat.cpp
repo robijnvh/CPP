@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 16:24:25 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/09/16 11:32:46 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/17 12:27:15 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Bureaucrat::Bureaucrat(void)
 {
-    this->_name = "undef";
+    this->_name = "empty";
     this->_grade = 1;
     return ;
 }
@@ -82,9 +82,9 @@ Bureaucrat::	GradeTooHighException::GradeTooHighException(const GradeTooHighExce
 
 Bureaucrat::	GradeTooHighException::~GradeTooHighException(void) throw() { return ;}
 
-Bureaucrat::GradeTooHighException	&Bureaucrat::GradeTooHighException::operator= (const GradeTooHighException &rhs)
+Bureaucrat::GradeTooHighException	&Bureaucrat::GradeTooHighException::operator= (const GradeTooHighException &obj)
 {
-    static_cast <void> (rhs);
+    static_cast <void> (obj);
     return (*this);
 }
 
@@ -114,12 +114,12 @@ void	Bureaucrat::signForm(Form &form)
 {
 	if (form.getGradeToSign() < this->_grade)
 	{
-		std::cerr << this->_name << " cannot sign " << form.getName()
+		std::cerr << this->_name << " can't sign " << form.getName()
 				  << " because Bureaucrat grade too low" << std::endl;
 	}
 	else if (form.getSigned())
 	{
-		std::cerr << this->_name << " cannot sign " << form.getName()
+		std::cerr << this->_name << " can't sign " << form.getName()
 				  << " because Form is already signed" << std::endl;
 	}
 	else
@@ -159,7 +159,7 @@ int	Bureaucrat::getGrade(void) const
 
 std::ostream	&operator<< (std::ostream &out, const Bureaucrat &rhs)
 {
-    out << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() \
+    out << rhs.getName() << ", Bureaucrat grade " << rhs.getGrade() \
         << std::endl;
     return (out);
 }

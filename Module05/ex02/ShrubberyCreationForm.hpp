@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/16 11:51:45 by rvan-hou          #+#    #+#             */
-/*   Updated: 2020/09/16 12:25:34 by rvan-hou         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ShrubberyCreationForm.hpp                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/09/16 11:51:45 by rvan-hou      #+#    #+#                 */
+/*   Updated: 2020/09/17 12:39:08 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include "Form.hpp"
 
 class ShrubberyCreationForm : public Form {
-	// std::string	_target;
 	ShrubberyCreationForm(void);
 
 	public:

@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 14:07:34 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/09/03 16:11:34 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/17 12:25:55 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,7 @@ class Bureaucrat {
 		Bureaucrat(int, std::string);
 		Bureaucrat(const Bureaucrat &obj);
 		Bureaucrat	&operator=(Bureaucrat const &obj);
-		virtual ~Bureaucrat(void);
-		// void		GradeTooHighException(void);
-		// void		GradeTooLowException(void);
+		virtual 	~Bureaucrat(void);
 		int			getGrade(void) const;
 		std::string	getName(void) const;
 		void        incrementGrade(void);
