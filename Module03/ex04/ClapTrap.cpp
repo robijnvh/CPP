@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ClapTrap.cpp                                       :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/08/03 15:28:06 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/05 13:08:12 by robijnvanho   ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/03 15:28:06 by wbarendr          #+#    #+#             */
+/*   Updated: 2020/09/29 11:34:46 by rvan-hou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap()
 	Energy_Points = 0;
 	Max_Energy_points = 0;
 	Armor_damage_reduction = 0;
-};
+}
 
 ClapTrap::ClapTrap(std::string name)
 {
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(std::string name)
 	Name = name;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& clapTrap) { *this = clapTrap; };
+ClapTrap::ClapTrap(const ClapTrap& clapTrap) { *this = clapTrap; }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& clapTrap)
 {
@@ -38,9 +38,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& clapTrap)
 	return *this;
 }
 
-ClapTrap::~ClapTrap(){ std::cout << "Destructing Claptrap" << std::endl; };
-
-//
+ClapTrap::~ClapTrap(){ std::cout << "Destructing Claptrap" << std::endl; }
 
 void	ClapTrap::giveName(std::string name)
 {

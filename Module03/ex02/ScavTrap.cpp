@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 17:38:06 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/08/04 12:18:27 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/29 11:30:17 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,18 @@ ScavTrap::ScavTrap(std::string name)
     this->ranged_att_damage = 15;
     this->armour_damage_red = 3;
     return ;
-};
+}
 
 ScavTrap::ScavTrap()
 { 
     std::cout << "Creating ScavTrap..." << std::endl;
-};
+}
 
 ScavTrap::~ScavTrap()
 {
     std::cout << "ScavTrap Destructor called" << std::endl;
     std::cout << this->_name << " has excited the game..." << std::endl;
-};
+}
 
 ScavTrap&   ScavTrap::operator=(ScavTrap const &obj)
 {
@@ -51,7 +51,7 @@ ScavTrap&   ScavTrap::operator=(ScavTrap const &obj)
     this->ranged_att_damage = obj.ranged_att_damage;
     this->armour_damage_red = obj.armour_damage_red;
     return (*this);
-};
+}
 
 void    ScavTrap::meleeAttack(std::string const &target)
 {
@@ -59,7 +59,7 @@ void    ScavTrap::meleeAttack(std::string const &target)
               << " with melee, causing " << this->melee_att_damage \
               << " points of damage !" << std::endl;
     return ;
-};
+}
 
 void    ScavTrap::rangedAttack(std::string const & target)
 {
@@ -67,7 +67,7 @@ void    ScavTrap::rangedAttack(std::string const & target)
                 << " at range, causing " << this->ranged_att_damage \
                 << " points of damage !" << std::endl;
     return ;
-};
+}
 
 void            ScavTrap::challengeNewcomer(std::string const & target)
 {
@@ -91,4 +91,4 @@ void            ScavTrap::challengeNewcomer(std::string const & target)
 std::string     ScavTrap::getChallenge(void)
 {
     return (this->challenge);
-};
+}

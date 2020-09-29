@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   NinjaTrap.cpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/03 13:00:47 by rvan-hou          #+#    #+#             */
-/*   Updated: 2020/08/04 12:27:54 by rvan-hou         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   NinjaTrap.cpp                                      :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/08/03 13:00:47 by rvan-hou      #+#    #+#                 */
+/*   Updated: 2020/09/29 11:31:53 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ NinjaTrap::NinjaTrap(std::string name)
 	this->_rangedAttackDamage = 5;
 	this->_armourDamageReduction = 0;
     return ;
-};
+}
 
 NinjaTrap::NinjaTrap()
 { 
@@ -39,17 +39,16 @@ NinjaTrap::NinjaTrap()
 	this->_meleeAttackDamage = 60;
 	this->_rangedAttackDamage = 5;
 	this->_armourDamageReduction = 0;
-};
+}
 
 NinjaTrap::NinjaTrap(const NinjaTrap& ninjaTrap): ClapTrap(ninjaTrap)
 {
-	
-};
+}
 
 NinjaTrap::~NinjaTrap()
 {
     std::cout << "NinjaTrap Destructor called" << std::endl;	
-};
+}
 
 NinjaTrap&   NinjaTrap::operator=(NinjaTrap const &obj)
 {
@@ -71,7 +70,7 @@ void    NinjaTrap::meleeAttack(std::string const &target)
               << " with melee, causing " << this->melee_att_damage \
               << " points of damage !" << std::endl;
     return ;
-};
+}
 
 void    NinjaTrap::rangedAttack(std::string const & target)
 {
@@ -79,7 +78,7 @@ void    NinjaTrap::rangedAttack(std::string const & target)
                 << " at range, causing " << this->ranged_att_damage \
                 << " points of damage !" << std::endl;
     return ;
-};
+}
 
 void		NinjaTrap::ninjaShoebox(ClapTrap &obj)
 {

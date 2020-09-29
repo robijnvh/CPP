@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/01 11:28:51 by robijnvanho       #+#    #+#             */
-/*   Updated: 2020/08/04 12:06:33 by rvan-hou         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   FragTrap.hpp                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/08/01 11:28:51 by robijnvanho   #+#    #+#                 */
+/*   Updated: 2020/09/29 11:27:13 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,6 @@ class FragTrap
         void    beRepaired(unsigned int amount);
         //get methods
         std::string 	getName(void);
-		// unsigned int	getHitPoints(void);
-		// unsigned int	getEnergyPoints(void);
-		// unsigned int	getLevel(void);
         unsigned int    getMeleeAttackDamage(void);
         unsigned int    getRangedAttackDamage(void);
         unsigned int    getArmourDamageReduction(void);

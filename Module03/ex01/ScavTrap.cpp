@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/01 17:38:06 by robijnvanho       #+#    #+#             */
-/*   Updated: 2020/08/04 12:11:24 by rvan-hou         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ScavTrap.cpp                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/08/01 17:38:06 by robijnvanho   #+#    #+#                 */
+/*   Updated: 2020/09/29 11:29:00 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ ScavTrap::ScavTrap(std::string name)
     this->ranged_att_damage = 15;
     this->armour_damage_red = 3;
     return ;
-};
+}
 
 ScavTrap::ScavTrap()
 { 
@@ -39,7 +39,7 @@ ScavTrap::ScavTrap()
     this->melee_att_damage = 20;
     this->ranged_att_damage = 15;
     this->armour_damage_red = 3;
-};
+}
 
 ScavTrap::ScavTrap(const ScavTrap& scavTrap)
 {
@@ -49,7 +49,7 @@ ScavTrap::ScavTrap(const ScavTrap& scavTrap)
 ScavTrap::~ScavTrap()
 {
     std::cout << this->_name << " has excited the game..." << std::endl;
-};
+}
 
 ScavTrap&   ScavTrap::operator=(ScavTrap const &obj)
 {
@@ -63,7 +63,7 @@ ScavTrap&   ScavTrap::operator=(ScavTrap const &obj)
     this->ranged_att_damage = obj.ranged_att_damage;
     this->armour_damage_red = obj.armour_damage_red;
     return (*this);
-};
+}
 
 void    ScavTrap::meleeAttack(std::string const &target)
 {
@@ -71,7 +71,7 @@ void    ScavTrap::meleeAttack(std::string const &target)
               << " with melee, causing " << this->melee_att_damage \
               << " points of EXTREME damage !" << std::endl;
     return ;
-};
+}
 
 void    ScavTrap::rangedAttack(std::string const & target)
 {
@@ -79,7 +79,7 @@ void    ScavTrap::rangedAttack(std::string const & target)
                 << " at range, causing " << this->ranged_att_damage \
                 << " points of EXTREME damage !" << std::endl;
     return ;
-};
+}
 
 void    ScavTrap::takeDamage(unsigned int amount)
 {
@@ -104,7 +104,7 @@ void    ScavTrap::takeDamage(unsigned int amount)
         << max_hit_points << std::endl;
     }
     return ;
-};
+}
 
 void    ScavTrap::beRepaired(unsigned int amount)
 {
@@ -121,7 +121,7 @@ void    ScavTrap::beRepaired(unsigned int amount)
     }
     std::cout << "Energy Points: " << energy_points << std::endl;
     return ;
-};
+}
 
 void            ScavTrap::challengeNewcomer(std::string const & target)
 {
@@ -145,24 +145,24 @@ void            ScavTrap::challengeNewcomer(std::string const & target)
 std::string     ScavTrap::getName()
 {
     return (this->_name);
-};
+}
 
 unsigned int    ScavTrap::getMeleeAttackDamage()
 {
     return (this->melee_att_damage);
-};
+}
 
 unsigned int    ScavTrap::getRangedAttackDamage()
 {
     return (this->ranged_att_damage);
-};
+}
 
 unsigned int    ScavTrap::getArmourDamageReduction()
 {
     return (this->armour_damage_red);
-};
+}
 
 std::string     ScavTrap::getChallenge(void)
 {
     return (this->challenge);
-};
+}

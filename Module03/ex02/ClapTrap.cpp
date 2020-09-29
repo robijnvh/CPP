@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 11:36:24 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/08/04 12:18:50 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/29 11:30:32 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ ClapTrap::ClapTrap(std::string name)
     this->ranged_att_damage = 0;
     this->armour_damage_red = 0;
     return ;
-};
+}
 
 ClapTrap::ClapTrap()
 { 
@@ -40,7 +40,7 @@ ClapTrap::ClapTrap()
     this->ranged_att_damage = 0;
     this->armour_damage_red = 0;
 	return ;
-};
+}
 
 ClapTrap::ClapTrap(const ClapTrap& clapTrap)
 {
@@ -51,7 +51,7 @@ ClapTrap::~ClapTrap()
 {
     std::cout << "ClapTrap Destructor called" << std::endl;
     return ;
-};
+}
 
 ClapTrap&   ClapTrap::operator=(ClapTrap const &obj)
 {
@@ -65,7 +65,7 @@ ClapTrap&   ClapTrap::operator=(ClapTrap const &obj)
     this->ranged_att_damage = obj.ranged_att_damage;
     this->armour_damage_red = obj.armour_damage_red;
 	return (*this);
-};
+}
 
 void    ClapTrap::takeDamage(unsigned int amount)
 {
@@ -90,7 +90,7 @@ void    ClapTrap::takeDamage(unsigned int amount)
         << max_hit_points << std::endl;
     }
     return ;
-};
+}
 
 void    ClapTrap::beRepaired(unsigned int amount)
 {
@@ -107,24 +107,24 @@ void    ClapTrap::beRepaired(unsigned int amount)
     }
     std::cout << "Energy Points: " << energy_points << std::endl;
     return ;
-};
+}
 
 std::string     ClapTrap::getName()
 {
     return (this->_name);
-};
+}
 
 unsigned int    ClapTrap::getMeleeAttackDamage()
 {
     return (this->melee_att_damage);
-};
+}
 
 unsigned int    ClapTrap::getRangedAttackDamage()
 {
     return (this->ranged_att_damage);
-};
+}
 
 unsigned int    ClapTrap::getArmourDamageReduction()
 {
     return (this->armour_damage_red);
-};
+}

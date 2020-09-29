@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 11:30:13 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/08/04 12:05:53 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/29 11:27:06 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ FragTrap::FragTrap()
     this->green_att_damage = 1;
     this->blue_att_damage = 100;
     this->vaulthunter_damage = 0;
-};
+}
 
 FragTrap::FragTrap(std::string name)
 {
@@ -47,12 +47,12 @@ FragTrap::FragTrap(std::string name)
     this->blue_att_damage = 100;
     this->vaulthunter_damage = 0;
     return ;
-};
+}
 
 FragTrap::~FragTrap()
 {
 	std::cout << this->_name << " has left the game..." << std::endl;
-};
+}
 
 FragTrap::FragTrap(const FragTrap &cpy)
 {
@@ -75,7 +75,7 @@ FragTrap&   FragTrap::operator=(FragTrap const &obj)
     this->blue_att_damage = obj.blue_att_damage;
     this->vaulthunter_damage = obj.vaulthunter_damage;
     return (*this);
-};
+}
 
 void    FragTrap::meleeAttack(std::string const &target)
 {
@@ -84,7 +84,7 @@ void    FragTrap::meleeAttack(std::string const &target)
               << " with melee, causing " << this->melee_att_damage \
               << " points of damage !" << std::endl;
     return ;
-};
+}
 
 void    FragTrap::rangedAttack(std::string const & target)
 {
@@ -93,7 +93,7 @@ void    FragTrap::rangedAttack(std::string const & target)
                 << " at range, causing " << this->ranged_att_damage \
                 << " points of damage !" << std::endl;
     return ;
-};
+}
 
 void    FragTrap::redAttack(std::string const & target)
 {
@@ -102,7 +102,7 @@ void    FragTrap::redAttack(std::string const & target)
                 << " with red power, causing " << this->red_att_damage \
                 << " points of damage !" << std::endl;
     
-};
+}
 
 void    FragTrap::greenAttack(std::string const & target)
 {
@@ -111,7 +111,7 @@ void    FragTrap::greenAttack(std::string const & target)
                 << " with green power, causing " << this->green_att_damage \
                 << " points of damage !" << std::endl;
     
-};
+}
 
 void    FragTrap::blueAttack(std::string const & target)
 {
@@ -120,7 +120,7 @@ void    FragTrap::blueAttack(std::string const & target)
                 << " with blue power, causing " << this->blue_att_damage \
                 << " points of damage !" << std::endl;
     
-};
+}
 
 void    FragTrap::takeDamage(unsigned int amount)
 {
@@ -145,7 +145,7 @@ void    FragTrap::takeDamage(unsigned int amount)
         << max_hit_points << std::endl;
     }
     return ;
-};
+}
 
 void    FragTrap::beRepaired(unsigned int amount)
 {
@@ -162,7 +162,7 @@ void    FragTrap::beRepaired(unsigned int amount)
     }
     std::cout << "Energy Points: " << energy_points << std::endl;
     return ;
-};
+}
 
 void            FragTrap::vaulthunter_dot_exe(std::string const & target)
 {
@@ -189,44 +189,29 @@ void            FragTrap::vaulthunter_dot_exe(std::string const & target)
             FragTrap::rangedAttack(target);
   }
   return ;
-};
+}
 
 unsigned int    FragTrap::getVaultHunter_dot_exeDamage()
 {
     return (this->vaulthunter_damage);
-};
+}
 
 std::string     FragTrap::getName()
 {
     return (this->_name);
-};
-
-// unsigned int	FragTrap::getHitPoints(void)
-// {
-// 	return (this->hit_points);
-// }
-
-// unsigned int	FragTrap::getEnergyPoints(void)
-// {
-// 	return (this->energy_points);
-// }
-
-// unsigned int	FragTrap::getLevel(void)
-// {
-// 	return (this->level);
-// }
+}
 
 unsigned int    FragTrap::getMeleeAttackDamage()
 {
     return (this->melee_att_damage);
-};
+}
 
 unsigned int    FragTrap::getRangedAttackDamage()
 {
     return (this->ranged_att_damage);
-};
+}
 
 unsigned int    FragTrap::getArmourDamageReduction()
 {
     return (this->armour_damage_red);
-};
+}

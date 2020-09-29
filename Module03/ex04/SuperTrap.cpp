@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 18:17:39 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/04 15:10:57 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/29 11:34:08 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 SuperTrap::SuperTrap()
 {
 	std::cout << "Constructing Supa! " << std::endl;
-};
+}
 
 SuperTrap::SuperTrap(std::string name)
 {
@@ -29,10 +29,10 @@ SuperTrap::SuperTrap(std::string name)
 	std::cout << "Constructing Supa with given name" << std::endl;
 	FragTrap::giveName(name);
 	NinjaTrap::giveName(name);
-};
+}
 
 SuperTrap::SuperTrap(const SuperTrap& superTrap): FragTrap(superTrap)
-{};
+{}
 
 SuperTrap& SuperTrap::operator=(const SuperTrap& superTrap)
 {
@@ -42,7 +42,7 @@ SuperTrap& SuperTrap::operator=(const SuperTrap& superTrap)
 
 SuperTrap::~SuperTrap(){
 	std::cout << "Destructor of all supa's!" << std::endl;
-};
+}
 
 void    SuperTrap::meleeAttack(std::string const& target){ NinjaTrap::meleeAttack(target); }
 void    SuperTrap::rangedAttack(std::string const& target){ FragTrap::rangedAttack(target); }

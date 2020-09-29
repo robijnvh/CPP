@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 11:51:07 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/04 15:08:49 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/29 11:33:26 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ FragTrap::FragTrap()
 	changeEnergy(100);
 	changeArmorReduction(5);
 	std::cout << "Constructing FragTrap" << std::endl;
-};
+}
 
 FragTrap::FragTrap(std::string name)
 {
@@ -31,10 +31,10 @@ FragTrap::FragTrap(std::string name)
 	changeArmorReduction(5);
 	std::cout << "Constructing FragTrap with given name" << std::endl;
 	this->giveName(name);
-};
+}
 
 FragTrap::FragTrap(const FragTrap& fragTrap): ClapTrap(fragTrap)
-{};
+{}
 
 FragTrap& FragTrap::operator=(const FragTrap& fragTrap)
 {
@@ -45,7 +45,7 @@ FragTrap& FragTrap::operator=(const FragTrap& fragTrap)
 FragTrap::~FragTrap()
 {
 	std::cout << "Destructing FragTrap" << std::endl;
-};
+}
 
 unsigned int	FragTrap::get_ranged(){ return Ranged_attack_damage; }
 unsigned int	FragTrap::get_armor(){ return Armor_damage_reduction; }

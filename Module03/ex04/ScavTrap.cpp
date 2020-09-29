@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 12:55:59 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/04 15:03:13 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/29 11:33:54 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ScavTrap::ScavTrap()
 {
 	std::cout << "Making a Scav" << std::endl;
-};
+}
 
 ScavTrap::ScavTrap(std::string name)
 {
@@ -26,10 +26,10 @@ ScavTrap::ScavTrap(std::string name)
 	changeArmorReduction(3);
 	std::cout << "Making a scav & naming it" << std::endl;
 	this->giveName(name);
-};
+}
 
 ScavTrap::ScavTrap(const ScavTrap& scavTrap): ClapTrap(scavTrap)
-{};
+{}
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& scavTrap)
 {
@@ -40,7 +40,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& scavTrap)
 ScavTrap::~ScavTrap()
 {
 	std::cout << "Destroyer of scav" << std::endl;
-};
+}
 
 void    ScavTrap::rangedAttack(std::string const& target)
 {
