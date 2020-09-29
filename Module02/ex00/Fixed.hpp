@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   Fixed.hpp                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 17:27:15 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/07/29 18:14:01 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/29 11:21:26 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

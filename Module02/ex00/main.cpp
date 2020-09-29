@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 18:05:01 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/07/29 18:39:59 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/29 11:21:29 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
