@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 10:39:19 by rvan-hou          #+#    #+#             */
-/*   Updated: 2020/07/29 11:19:07 by rvan-hou         ###   ########.fr       */
+/*   Updated: 2020/08/04 11:01:44 by rvan-hou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@
 # include <sstream>
 
 class Brain {
+	std::string addr;
+		
 	public:
 		Brain(void);
 		~Brain(void);
 		std::string identify(void);
-		std::string addr;
 };
 
 #endif

@@ -1,25 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/28 18:26:06 by robijnvanho       #+#    #+#             */
-/*   Updated: 2020/07/29 10:22:10 by rvan-hou         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ZombieHorde.cpp                                    :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/07/28 18:26:06 by robijnvanho   #+#    #+#                 */
+/*   Updated: 2020/09/29 11:09:12 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieHorde.hpp"
-
-void ZombieHorde::announce(void)
-{
-    for (int i = 0; i < this->n; i++)
-    {
-        this->_zombie[i].announce();
-    }
-    return ;
-}
 
 std::string     randomName(void)
 {
@@ -36,15 +27,26 @@ std::string     randomName(void)
     return (names[index]);
 }
 
-ZombieHorde::~ZombieHorde(void) {return ;};
-
-ZombieHorde::ZombieHorde(int n): n(n)
+ZombieHorde::~ZombieHorde()
 {
-    this->_zombie = new Zombie[n]();
-    
+    delete[] _zombie;
+}
+
+ZombieHorde::ZombieHorde(int n)
+{
+    _n = n;
+    this->_zombie = new Zombie[n];
     for (int i = 0; i < n; i++)
     {
-        this->_zombie[i].type = "Monster";
-        this->_zombie[i].name = randomName();
+        this->_zombie[i].setType("Monster");
+        this->_zombie[i].setName(randomName());
     }
+}
+
+Zombie*     ZombieHorde::getZombies(){
+    return _zombie;
+}
+
+int         ZombieHorde::getNum(){
+    return _n;
 }

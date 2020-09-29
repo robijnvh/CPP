@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 11:22:44 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/07/29 11:31:39 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/29 11:12:46 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Weapon {
 
 	public:
 	Weapon(std::string);
+	Weapon(void);
 	~Weapon(void);
 	const std::string	getType(void);
 	void	setType(std::string);

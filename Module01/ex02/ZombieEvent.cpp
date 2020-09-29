@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ZombieEvent.cpp                                    :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 17:04:08 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/07/28 17:47:56 by robijnvanho   ########   odam.nl         */
+/*   Updated: 2020/09/28 14:52:32 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

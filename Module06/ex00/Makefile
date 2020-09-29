@@ -3,10 +3,10 @@
 #                                                         ::::::::             #
 #    Makefile                                           :+:    :+:             #
 #                                                      +:+                     #
-#    By: robijnvanhouts <robijnvanhouts@student.      +#+                      #
+#    By: rvan-hou <rvan-hou@student.42.fr>            +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/09/21 12:26:21 by robijnvanho   #+#    #+#                  #
-#    Updated: 2020/09/21 12:36:26 by robijnvanho   ########   odam.nl          #
+#    Updated: 2020/09/23 15:41:54 by rvan-hou      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,6 @@ $(NAME): $(OBJ) $(HEADER)
 	clang++ $(FLAGS) -o $@ -c $<
 
 clean:
-	/bin/rm -f $(OBJ)
 
 fclean: clean
 	/bin/rm -f $(NAME)

@@ -3,26 +3,26 @@
 #                                                         ::::::::             #
 #    Makefile                                           :+:    :+:             #
 #                                                      +:+                     #
-#    By: robijnvanhouts <robijnvanhouts@student.      +#+                      #
+#    By: rvan-hou <rvan-hou@student.42.fr>            +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/09/22 17:36:10 by robijnvanho   #+#    #+#                  #
-#    Updated: 2020/09/22 17:36:49 by robijnvanho   ########   odam.nl          #
+#    Updated: 2020/09/23 14:50:42 by rvan-hou      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex02
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 
-HEADER = Array.hpp
+HDR = Array.hpp
 
-SRC = Array.cpp Main.cpp
+SRC = main.cpp Array.cpp
 
 all: $(NAME)
 
 OBJ = $(SRC:.c=.o)
 
-$(NAME): $(OBJ) $(HEADER)
+$(NAME): $(OBJ) $(HDR)
 	@clang++ $(OBJ) -o $@
 
 %.o: %.cpp %.hpp

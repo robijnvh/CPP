@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   Zombie.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 16:16:31 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/07/28 19:14:02 by robijnvanho   ########   odam.nl         */
+/*   Updated: 2020/08/04 10:59:55 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@
 # include <iostream>
 
 class Zombie {
+        std::string type;
+        std::string name;
     
     public:
         Zombie(void);
         ~Zombie(void);
-        
-        std::string type;
-        std::string name;
-        void announce(void); 
+        void announce(void);
+		void	setName(std::string);
+		void	setType(std::string);
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   Array.hpp                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/22 16:20:05 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/09/23 13:44:25 by robijnvanho   ########   odam.nl         */
+/*   Updated: 2020/09/23 14:51:37 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,13 @@ class Array {
   int _len;
   
   public:
-    Array<T>(void);
-    Array<T>(int n);
-    Array<T>(const Array<T> &obj);
-    Array <T>&operator=(const Array<T> &obj);
+    Array(void);
+    Array(int n);
+    Array(const Array<T> &obj);
+    Array &operator=(const Array &obj);
     T &operator[](int i);
-    ~Array<T>(void);
+    ~Array(void);
     int getSize(void);
-    
-    // class   OutOfBoundsException : public std::exception  {
-	  //   public:
-		//     OutOfBoundsException(void);
-		//     OutOfBoundsException(const OutOfBoundsException &obj);
-		//     ~OutOfBoundsException(void) throw();
-		//     OutOfBoundsException  &operator=(const OutOfBoundsException &obj);
-		//     const char* what() const throw();
-	  // };
 };
 
 #endif

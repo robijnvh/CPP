@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 18:26:08 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/07/29 10:24:14 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/28 15:30:15 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@
 # include "Zombie.hpp"
 
 class ZombieHorde {
-    int     n;
+    int     _n;
     Zombie  *_zombie;
     
     public:
+        ZombieHorde(){};
         ZombieHorde(int);
-        ~ZombieHorde(void);
-        void announce(void);
+        ~ZombieHorde();
+        Zombie*     getZombies();
+        int         getNum();
 };
 
 #endif

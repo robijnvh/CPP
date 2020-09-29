@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   Array.cpp                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/22 16:22:39 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/09/23 13:47:39 by robijnvanho   ########   odam.nl         */
+/*   Updated: 2020/09/23 14:54:41 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,18 @@ Array<T>::Array(const Array<T> &obj)
 template <typename T>
 Array<T>   &Array<T>::operator=(const Array<T> &obj)
 {
-    _len = obj.getSize();
-    T *a = new T*[_len];
-    for (int i = 0; i < _len; i++)
-    	a[i] = new T(obj[i]);
-    return (*this);
+	if (&obj == this)
+		return *this;
+	if (this->getSize() != obj.getSize())
+	{
+		if (this->_array != NULL)
+			delete [] this->_array;
+		this->_array = new T[obj.getSize()];
+	}
+	this->_n = obj.getSize();
+	for (size_t i = 0; i < obj.getSize(); i++)
+		this->_array[i] = obj._array[i];
+	return *this;
 }
 
 template <typename T>
@@ -54,9 +61,9 @@ Array<T>::~Array<T>(void)
 template <typename T>
 T   &Array<T>::operator[](int i)
 {
-	if (i >= _len)
-		throw OutOfBoundsException();
-	return (*_array[i]);
+	if (!this->_array || i < 0 || i >= this->_len)
+		throw std::exception();
+	return this->_array[i];
 }
 
 template <typename T>
@@ -64,36 +71,3 @@ int	Array<T>::getSize(void)
 {
    return (_len);
 }
-
-// template <typename T>
-// Array<T>::OutOfBoundsException::OutOfBoundsException(void)
-// {
-//     return ;
-// }
-
-// template <typename T>
-// Array<T>::OutOfBoundsException::OutOfBoundsException(const OutOfBoundsException &obj)
-// {
-//     *this = obj;
-//     return ;
-// }
-
-// template <typename T>
-// Array<T>::OutOfBoundsException::~OutOfBoundsException(void) throw()
-// {
-//     return ;
-// }
-
-// template <typename T>
-// Array<T>::OutOfBoundsException  &Array<T>::OutOfBoundsException::operator=(const Array<T>::OutOfBoundsException &obj)
-// {
-//     if (obj)
-//         *this = obj;
-//     return (*this);
-// }
-
-// template <typename T>
-// const char*     Array<T>::OutOfBoundsException::what() const throw()
-// {
-//     return ("index out of bounds");
-// }

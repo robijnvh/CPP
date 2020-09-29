@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 10:13:19 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/07/28 13:42:27 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/28 14:50:27 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Pony {
 	
   public:
     Pony(std::string name, std::string  color, std::string age);
+	Pony(void);
     ~Pony(void);
 	
 	std::string const giveColor();
