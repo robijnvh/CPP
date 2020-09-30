@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Squad.cpp                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/07 12:41:55 by rvan-hou          #+#    #+#             */
-/*   Updated: 2020/09/03 11:44:24 by rvan-hou         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   Squad.cpp                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/08/07 12:41:55 by rvan-hou      #+#    #+#                 */
+/*   Updated: 2020/09/29 11:40:53 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Squad::Squad(const Squad &obj)
     this->_count = obj._count;
 }
 
-Squad::~Squad() { this->destroyUnits(); };
+Squad::~Squad() { this->destroyUnits(); }
 
 Squad&	Squad::operator = (const Squad &obj)
 {

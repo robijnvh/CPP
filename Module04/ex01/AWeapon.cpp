@@ -6,15 +6,15 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/06 14:25:47 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/08/07 11:18:12 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/29 11:40:05 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AWeapon.hpp"
 
-AWeapon::AWeapon() {};
+AWeapon::AWeapon() {}
 
-AWeapon::AWeapon(std::string const & name, int apcost, int damage): _name(name), _apcost(apcost), _damage(damage) {};
+AWeapon::AWeapon(std::string const & name, int apcost, int damage): _name(name), _apcost(apcost), _damage(damage) {}
 
 AWeapon::AWeapon(const AWeapon &obj)
 {
@@ -29,7 +29,7 @@ AWeapon&	AWeapon::operator=(AWeapon const &obj)
     return (*this);
 }  
 
-AWeapon::~AWeapon() {};
+AWeapon::~AWeapon() {}
 
 std::string		AWeapon::getName() const
 {

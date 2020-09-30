@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/06 14:39:52 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/08/07 11:18:42 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/29 11:40:11 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ PlasmaRifle::PlasmaRifle(): AWeapon("Plasma Rifle", 5, 21)
 	_outputAttack = "* piouuu piouuu piouuu *";
 }
 
-PlasmaRifle::PlasmaRifle(const PlasmaRifle &obj): AWeapon(obj) {};
+PlasmaRifle::PlasmaRifle(const PlasmaRifle &obj): AWeapon(obj) {}
 
 PlasmaRifle&	PlasmaRifle::operator=(PlasmaRifle const &obj)
 {
@@ -25,7 +25,7 @@ PlasmaRifle&	PlasmaRifle::operator=(PlasmaRifle const &obj)
 	return (*this);
 }
 
-PlasmaRifle::~PlasmaRifle(void) {};
+PlasmaRifle::~PlasmaRifle(void) {}
 
 void			PlasmaRifle::attack(void) const
 {

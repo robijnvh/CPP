@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   SuperMutant.cpp                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/07 10:22:15 by rvan-hou          #+#    #+#             */
-/*   Updated: 2020/08/07 10:33:18 by rvan-hou         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   SuperMutant.cpp                                    :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/08/07 10:22:15 by rvan-hou      #+#    #+#                 */
+/*   Updated: 2020/09/29 11:39:39 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ SuperMutant::SuperMutant(): Enemy(170, "Super Mutant")
 SuperMutant::SuperMutant(const SuperMutant &obj): Enemy(obj)
 {
 	std::cout << "Gaaah. Me want smash heads!" << std::endl;
-};
+}
 
 SuperMutant&	SuperMutant::operator=(SuperMutant const &obj)
 {

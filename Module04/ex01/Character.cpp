@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 10:36:25 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/08/07 11:18:25 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/29 11:38:50 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Character&	Character::operator=(Character const &obj)
     return (*this);
 }  
 
-Character::~Character() {};
+Character::~Character() {}
 
 std::string const&	Character::getName(void) const
 {
