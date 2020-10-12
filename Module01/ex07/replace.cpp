@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   replace.cpp                                        :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/07/29 13:36:27 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/09/29 11:13:53 by rvan-hou      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   replace.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/29 13:36:27 by rvan-hou          #+#    #+#             */
+/*   Updated: 2020/10/12 14:07:07 by rvan-hou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string>
 #include <fstream>
 
-bool fexists1(std::string fname)
+bool exists(std::string fname)
 {
     std::ifstream f;
     f.open(fname);
@@ -39,10 +39,10 @@ int         main(int argc, char **argv)
     }
     if (!argv[2] || !argv[3])
     {
-        std::cout << "one  or both strings were emmpty" << std::endl;
+        std::cout << "one or both strings were emmpty" << std::endl;
         return -1;
     }
-    if (!fexists1(argv[1]))
+    if (!exists(argv[1]))
     {
         std::cout << "File didn't exist!" << std::endl;
         return -1;
@@ -55,11 +55,10 @@ int         main(int argc, char **argv)
             pos = line.find(argv[2]);
             while (pos != std::string::npos)
             {
-                pos = line.find(argv[2]);
-                if (pos != std::string::npos)
-                    line.replace(pos, strlen(argv[2]), argv[3]);
+                line.replace(pos, strlen(argv[2]), argv[3]);
+                pos = line.find(argv[2], pos + strlen(argv[3]));
             }
-                new_file << line << std::endl;
+            new_file << line << std::endl;
         }
         new_file.close();
     }

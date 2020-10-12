@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-// Module00 -> done
-Module01 -> retry friday
-Module02 -> evaluate (not locked yet)
-Module03 -> evaluate
-Module04 -> retry sunday
-// Module05 -> done
-Module06 -> evaluate (not locked yet)
-Module07 -> evaluate (not locked yet)
-=======
 CPP Progress:
 
 // Module00 -> done \\
@@ -24,5 +14,4 @@ Module06 -> finish & evaluate
 
 Module04 -> fix & retry
 
->>>>>>> 3aebe4cb30ee29c1e62e57433c11c207657f0d8c
 Module08 -> not available yet
