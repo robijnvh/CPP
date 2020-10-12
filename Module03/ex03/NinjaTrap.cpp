@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 13:00:47 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/09/29 11:31:53 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/10/02 12:04:40 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,22 +62,6 @@ NinjaTrap&   NinjaTrap::operator=(NinjaTrap const &obj)
 	this->_rangedAttackDamage = obj._rangedAttackDamage;
 	this->_armourDamageReduction = obj._armourDamageReduction;
     return (*this);
-}
-
-void    NinjaTrap::meleeAttack(std::string const &target)
-{
-    std::cout << "NINJATRAP" << this->_name << " attacks " << target \
-              << " with melee, causing " << this->melee_att_damage \
-              << " points of damage !" << std::endl;
-    return ;
-}
-
-void    NinjaTrap::rangedAttack(std::string const & target)
-{
-    std::cout   << "NINJATRAP" << this->_name << " attacks " << target \
-                << " at range, causing " << this->ranged_att_damage \
-                << " points of damage !" << std::endl;
-    return ;
 }
 
 void		NinjaTrap::ninjaShoebox(ClapTrap &obj)

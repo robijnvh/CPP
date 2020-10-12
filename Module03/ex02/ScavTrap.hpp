@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 17:38:23 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/09/29 11:30:21 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/10/02 11:57:06 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ class ScavTrap : public ClapTrap
         //challenge
         void            challengeNewcomer(std::string const & target);
         std::string     getChallenge(void);
-		void    		rangedAttack(std::string const & target);
-        void    		meleeAttack(std::string const & target);
 };
 
 #endif

@@ -1,9 +1,9 @@
-Module00 -> done
+// Module00 -> done
 Module01 -> retry friday
-Module02 -> retry friday
-Module03 -> retry friday
-Module04 -> evaluate
-Module05 -> evaluate
-Module06 -> evaluate
-Module07 -> not done
+Module02 -> evaluate (not locked yet)
+Module03 -> evaluate
+Module04 -> retry sunday
+// Module05 -> done
+Module06 -> evaluate (not locked yet)
+Module07 -> evaluate (not locked yet)
 Module08 -> not available yet

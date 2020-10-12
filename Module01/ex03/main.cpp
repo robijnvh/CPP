@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/28 18:33:22 by robijnvanho       #+#    #+#             */
-/*   Updated: 2020/09/28 15:55:39 by rvan-hou         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   main.cpp                                           :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/07/28 18:33:22 by robijnvanho   #+#    #+#                 */
+/*   Updated: 2020/10/02 16:15:34 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@
 void    makeZombie(void)
 {
     ZombieHorde test = ZombieHorde(10);
-    for (int i = 0; i < test.getNum(); i++)
-    {
-        test.getZombies()[i].announce();
-    }
+    test.announce();
 }
 
 int     main(void)

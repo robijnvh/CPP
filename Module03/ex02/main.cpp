@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 11:28:12 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/09/29 11:30:05 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/10/02 11:48:07 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ int     main(void)
 
     std::cout << std::endl << "Round 3 (challenge)" << std::endl;
     player1.challengeNewcomer(player2.getName());
-    
+    std::cout << std::endl << "Game ended." << std::endl;
     return (0);
 }

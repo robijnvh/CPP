@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   NinjaTrap.hpp                                      :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/08/03 13:00:15 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/09/29 11:31:58 by rvan-hou      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/03 13:00:15 by rvan-hou          #+#    #+#             */
+/*   Updated: 2020/10/02 12:04:46 by rvan-hou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ class NinjaTrap : public ClapTrap {
 		NinjaTrap(const NinjaTrap& ninjaTrap);
 		~NinjaTrap();
         NinjaTrap 	&operator=(NinjaTrap const &obj);
-		void		meleeAttack(std::string const &target);
-		void		rangedAttack(std::string const & target);
 		void		ninjaShoebox(ScavTrap &obj);
 		void		ninjaShoebox(FragTrap &obj);
 		void		ninjaShoebox(NinjaTrap &obj);

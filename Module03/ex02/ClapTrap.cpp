@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 11:36:24 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/09/29 11:30:32 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/10/02 11:54:53 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,22 @@ void    ClapTrap::beRepaired(unsigned int amount)
         std::cout << "Hit Points: " << hit_points << std::endl;
     }
     std::cout << "Energy Points: " << energy_points << std::endl;
+    return ;
+}
+
+void    ClapTrap::meleeAttack(std::string const &target)
+{
+    std::cout << this->_name << " attacks " << target \
+              << " with melee, causing " << this->melee_att_damage \
+              << " points of damage !" << std::endl;
+    return ;
+}
+
+void    ClapTrap::rangedAttack(std::string const & target)
+{
+    std::cout   << this->_name << " attacks " << target \
+                << " at range, causing " << this->ranged_att_damage \
+                << " points of damage !" << std::endl;
     return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 11:30:13 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/09/29 11:30:44 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/10/02 11:56:41 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ FragTrap&   FragTrap::operator=(FragTrap const &obj)
     return (*this);
 }
 
-void    FragTrap::meleeAttack(std::string const &target)
+void    FragTrap::meleeAttack_extra(std::string const &target)
 {
     this->vaulthunter_damage = this->melee_att_damage;
     std::cout << "FR4G-TP " << this->_name << " attacks " << target \
@@ -69,7 +69,7 @@ void    FragTrap::meleeAttack(std::string const &target)
     return ;
 }
 
-void    FragTrap::rangedAttack(std::string const & target)
+void    FragTrap::rangedAttack_extra(std::string const & target)
 {
     this->vaulthunter_damage = this->ranged_att_damage;
     std::cout   << "FR4G-TP " << this->_name << " attacks " << target \
@@ -125,9 +125,9 @@ void            FragTrap::vaulthunter_dot_exe(std::string const & target)
         else if (attack == 2)
             FragTrap::blueAttack(target);
         else if (attack == 3)
-            FragTrap::meleeAttack(target);
+            FragTrap::meleeAttack_extra(target);
         else
-            FragTrap::rangedAttack(target);
+            FragTrap::rangedAttack_extra(target);
   }
   return ;
 }

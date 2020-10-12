@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   FragTrap.hpp                                       :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/08/01 11:28:51 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/08/03 12:31:44 by rvan-hou      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/01 11:28:51 by robijnvanho       #+#    #+#             */
+/*   Updated: 2020/10/02 11:57:11 by rvan-hou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ class FragTrap : public ClapTrap
         //operator
         FragTrap  &operator=(FragTrap const &obj);
         //random attack method
-		void    		rangedAttack(std::string const & target);
-        void    		meleeAttack(std::string const & target);
+		void    		rangedAttack_extra(std::string const & target);
+        void    		meleeAttack_extra(std::string const & target);
         unsigned int    getVaultHunter_dot_exeDamage(void);
         void            vaulthunter_dot_exe(std::string const & target);
         void            redAttack(std::string const & target);

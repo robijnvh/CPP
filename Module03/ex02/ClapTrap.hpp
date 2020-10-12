@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 11:35:56 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/09/29 11:29:44 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/10/02 11:56:57 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ class ClapTrap {
 		//methods
         void    takeDamage(unsigned int amount);
         void    beRepaired(unsigned int amount);
-		std::string     getName(void);
+		void    		rangedAttack(std::string const & target);
+        void    		meleeAttack(std::string const & target);
+		std::string     getName(void);	
         unsigned int    getMeleeAttackDamage(void);
         unsigned int    getRangedAttackDamage(void);
         unsigned int    getArmourDamageReduction(void);

@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 11:36:24 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/09/29 11:31:17 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/10/02 11:58:49 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ ClapTrap&   ClapTrap::operator=(ClapTrap const &obj)
 
 void    ClapTrap::meleeAttack(std::string const &target)
 {
-    std::cout << "CLAP-TP " << this->_name << " attacks " << target \
+    std::cout << this->_name << " attacks " << target \
               << " with melee, causing " << this->melee_att_damage \
               << " points of damage !" << std::endl;
     return ;
@@ -63,7 +63,7 @@ void    ClapTrap::meleeAttack(std::string const &target)
 
 void    ClapTrap::rangedAttack(std::string const & target)
 {
-    std::cout   << "CLAP-TP " << this->_name << " attacks " << target \
+    std::cout   << this->_name << " attacks " << target \
                 << " at range, causing " << this->ranged_att_damage \
                 << " points of damage !" << std::endl;
     return ;

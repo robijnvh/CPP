@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   Fixed.cpp                                          :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/07/29 19:50:30 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/29 11:23:28 by rvan-hou      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/29 19:50:30 by wbarendr          #+#    #+#             */
+/*   Updated: 2020/10/02 14:05:04 by rvan-hou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,8 @@ Fixed::Fixed(const int num)
 
 Fixed::Fixed(const float num)
 {
-	std::cout << num << std::endl;
     std::cout << "Float constructor called" << std::endl;
     this->fixed_point= roundf(num * (1 << literal));
-	std::cout << this->fixed_point << std::endl;
     return ;
 }
 

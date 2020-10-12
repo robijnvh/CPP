@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 18:26:08 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/09/28 15:30:15 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/10/02 16:14:41 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class ZombieHorde {
         ~ZombieHorde();
         Zombie*     getZombies();
         int         getNum();
+        void        announce(void);
 };
 
 #endif
