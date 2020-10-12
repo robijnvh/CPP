@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   RadScorpion.hpp                                    :+:    :+:            */
+/*   Thief.hpp                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
+/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/07 10:33:48 by rvan-hou      #+#    #+#                 */
-/*   Updated: 2020/10/03 14:13:08 by robijnvanho   ########   odam.nl         */
+/*   Created: 2020/10/03 14:02:02 by robijnvanho   #+#    #+#                 */
+/*   Updated: 2020/10/03 14:09:33 by robijnvanho   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _RADSCORPION_HPP_
-# define _RADSCORPION_HPP_
+#ifndef _THIEF_HPP_
+# define _THIEF_HPP_
 # include <iostream>
 # include <string>
-# include "Enemy.hpp"
+# include "Victim.hpp"
 
-class RadScorpion: public Enemy {
-	
+class Thief: public Victim {
+    Thief(void);
+    
 	public:
-		RadScorpion(void);
-		RadScorpion(const RadScorpion &obj);
-	    RadScorpion    &operator=(RadScorpion const &obj);
-		virtual ~RadScorpion();
+    Thief(std::string);
+    Thief(const Thief &obj);
+    Thief    &operator=(Thief const &obj);
+    virtual ~Thief(void);
+	//methods
+	virtual void			getPolymorphed() const;
 };
 
 #endif

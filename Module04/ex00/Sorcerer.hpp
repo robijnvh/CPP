@@ -6,7 +6,7 @@
 /*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/05 14:13:09 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/08/07 10:50:37 by rvan-hou      ########   odam.nl         */
+/*   Updated: 2020/10/03 13:56:19 by robijnvanho   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 class Sorcerer {
     std::string _name;
     std::string _title;
-    Sorcerer(void);
     
 	public:
+    Sorcerer(void);
     Sorcerer(std::string, std::string);
     Sorcerer(const Sorcerer &obj);
     Sorcerer    &operator=(Sorcerer const &obj);
