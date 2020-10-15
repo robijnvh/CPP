@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/21 12:51:23 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/09/21 13:04:52 by robijnvanho   ########   odam.nl         */
+/*   Updated: 2020/09/29 12:38:38 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ struct Data
     std::string s2;
     int         n;
 };
-
 
 void    *serialize(void)
 {

@@ -3,35 +3,63 @@
 /*                                                        ::::::::            */
 /*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/21 11:19:28 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/09/21 12:18:37 by robijnvanho   ########   odam.nl         */
+/*   Created: 2020/10/15 10:44:44 by rvan-hou      #+#    #+#                 */
+/*   Updated: 2020/10/15 10:54:12 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <stdexcept>
+#include <string>
+#include <sstream>
+#include <cctype>
+#include <math.h>
+#include <climits>
 
-#include "utils.hpp"
-#include "ScalarConversion.hpp"
-
-int main(int argc, char **argv)
+void    ft_convert(char *str)
 {
-    double              value;
-    int                 precision;
-    ScalarConv          scalar;
+    std::string     res;
+    double          d;
+    int             i = 0;
+    int             size = 0;
 
-    for (int i = 1; i < argc; i += 1)
+    while (str[i] && std::isspace(str[i]))
+        i++;
+    while (str[ i + size] && !std::isspace(str[i + size]))
+        size++;
+    res = std::string(str, i, size);
+    if (res.length() == 1 && std::isprint(res[0]) && !std::isdigit(res[0]))
+        d = res[0];
+    else
     {
-        std::cout << "string : " << argv[i] << std::endl;
-        precision = findPrecision(argv[i]);
-        value = atof(argv[i]);
-        checkForChar(scalar, value);
-        checkForInt(scalar, value);
-        checkForDouble(scalar, value, precision);
-        checkForFloat(scalar, value, precision);
-        std::cout << std::endl;
+        try
+        {
+            d = std::stod(res);
+        }
+        catch(const std::exception& e)
+        {
+			std::cout << "No conversion found..." << std::endl;
+			std::cout << "char: impossible" << std::endl;
+			std::cout << "int: mpossible" << std::endl;
+			std::cout << "float: impossible" << std::endl;
+			std::cout << "double: impossible" << std::endl;
+			return ;
+        }
     }
-    return (0);
+    std::cout << "char: " 
+    
+    
+    
+}
+
+int		main(int argc, char **argv)
+{
+	if (argc != 2)
+	{
+		std::cout << "Wrong input... Please give: ./convert <number>" << std::endl;
+		return (1);
+	}
+	ft_convert(argv[1]);
+	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   A.cpp                                              :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/21 13:19:11 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/09/21 14:20:05 by robijnvanho   ########   odam.nl         */
+/*   Updated: 2020/09/29 12:39:18 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

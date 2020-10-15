@@ -1,17 +1,14 @@
 CPP Progress:
 
 // Module00 -> done \\
+// Module02 -> done \\
 // Module03 -> done \\
+// Module04 -> done \\
 // Module05 -> done \\
+// Module07 -> done \\
 
-Module07 -> evaluate
-
-Module01 -> finish & evaluate
-
-Module02 -> finish & evaluate
+Module01 -> evaluate 0/2
 
 Module06 -> finish & evaluate
 
-Module04 -> fix & retry
-
-Module08 -> not available yet
+Module08 -> retry saturday!

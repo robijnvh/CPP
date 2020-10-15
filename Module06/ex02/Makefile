@@ -1,18 +1,18 @@
 # **************************************************************************** #
 #                                                                              #
-#                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
-#                                                      +:+                     #
-#    By: rvan-hou <rvan-hou@student.42.fr>            +#+                      #
-#                                                    +#+                       #
-#    Created: 2020/09/21 14:23:47 by robijnvanho   #+#    #+#                  #
-#    Updated: 2020/09/23 15:46:43 by rvan-hou      ########   odam.nl          #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rvan-hou <rvan-hou@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/09/21 14:23:47 by robijnvanho       #+#    #+#              #
+#    Updated: 2020/09/29 12:39:11 by rvan-hou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = identifyType
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 
 HDR = A.hpp B.hpp C.hpp Base.hpp
 

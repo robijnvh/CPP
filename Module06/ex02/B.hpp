@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   B.hpp                                              :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/21 13:18:08 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/09/21 13:18:31 by robijnvanho   ########   odam.nl         */
+/*   Updated: 2020/09/29 12:39:24 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

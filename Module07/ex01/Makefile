@@ -6,13 +6,13 @@
 #    By: rvan-hou <rvan-hou@student.42.fr>            +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/09/21 15:05:02 by robijnvanho   #+#    #+#                  #
-#    Updated: 2020/09/23 15:52:45 by rvan-hou      ########   odam.nl          #
+#    Updated: 2020/09/29 12:41:18 by rvan-hou      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex01
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 
 SRC = iter.cpp
 

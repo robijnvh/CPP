@@ -1,0 +1,1 @@
+clang++ -Wall -Wextra -Werror -pedantic -std=c++98 *.cpp  && ./a.out

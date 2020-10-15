@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   whatever.cpp                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/21 14:43:25 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/09/21 15:04:25 by robijnvanho   ########   odam.nl         */
+/*   Updated: 2020/10/02 12:24:26 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int     main(void)
     std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
     std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
     
-    //check for different types
+    // check for different types
     // int e = 1;
     // std::string = "check";
     // ::swap(a, c);

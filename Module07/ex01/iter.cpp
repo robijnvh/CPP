@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   iter.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: robijnvanhouts <robijnvanhouts@student.      +#+                     */
+/*   By: rvan-hou <rvan-hou@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/21 15:05:09 by robijnvanho   #+#    #+#                 */
-/*   Updated: 2020/09/22 16:16:20 by robijnvanho   ########   odam.nl         */
+/*   Updated: 2020/10/02 12:29:29 by rvan-hou      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void    iter(T *arr, int len, void (*f)(T const &))
         }
     }
 }
-
 
 template <typename T>
 void    printAll(T const &c)

@@ -5,27 +5,22 @@
 #                                                      +:+                     #
 #    By: rvan-hou <rvan-hou@student.42.fr>            +#+                      #
 #                                                    +#+                       #
-#    Created: 2020/09/21 12:26:21 by robijnvanho   #+#    #+#                  #
-#    Updated: 2020/09/23 15:41:54 by rvan-hou      ########   odam.nl          #
+#    Created: 2020/10/15 10:44:23 by rvan-hou      #+#    #+#                  #
+#    Updated: 2020/10/15 10:44:40 by rvan-hou      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = convert
 
-HEADER =	utils.hpp \
-			ScalarConversion.hpp
+FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 
-FLAGS = -Wall -Wextra -Werror
-
-SRC =	utils.cpp \
-		main.cpp \
-		ScalarConversion.cpp
+SRC =	main.cpp
 
 all: $(NAME)
 
 OBJ = $(SRC:.c=.o)
 
-$(NAME): $(OBJ) $(HEADER)
+$(NAME): $(OBJ)
 	@clang++ $(OBJ) -o $@
 
 %.o: %.cpp %.hpp
